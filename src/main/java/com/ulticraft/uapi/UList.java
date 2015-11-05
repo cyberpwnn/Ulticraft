@@ -139,6 +139,7 @@ public class UList<T> extends ArrayList<T>
 		});
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void add(T... array)
 	{
 		for(T i : array)

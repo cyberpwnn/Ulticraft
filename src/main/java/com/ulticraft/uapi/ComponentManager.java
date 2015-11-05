@@ -98,7 +98,6 @@ public class ComponentManager
 	{
 		if(isValid(c))
 		{
-			Class<?> clazz = c.getClass();
 			Method disable = getDeclaredMethod(c, "disable");
 			
 			if(components.get(c))
