@@ -9,18 +9,26 @@ import com.ulticraft.Ulticraft;
 public class DataManager
 {
 	private File file;
+	private Ulticraft pl;
 	
 	public DataManager(Ulticraft pl, String localPath)
 	{
 		file = new File(pl.getDataFolder(), localPath);
+		this.pl = pl;
 	}
 	
 	public DataManager(Ulticraft pl, File file)
 	{
 		this.file = file;
+		this.pl = pl;
 	}
 	
 	public void writeYAML(Object o)
+	{
+		writeYAML(o, false);
+	}
+	
+	public void writeYAML(Object o, boolean v)
 	{
 		verifyFile(file);
 		FileConfiguration fc = new YamlConfiguration();
@@ -41,9 +49,19 @@ public class DataManager
 		{
 			e.printStackTrace();
 		}
+		
+		if(v)
+		{
+			r.showLog(pl.getDispatcher());
+		}
 	}
 	
 	public Object readYAML(Class<?> clazz)
+	{
+		return readYAML(clazz, false);
+	}
+	
+	public Object readYAML(Class<?> clazz, boolean v)
 	{
 		FileConfiguration fc = new YamlConfiguration();
 		Reflector r = new Reflector();
@@ -70,12 +88,22 @@ public class DataManager
 				}
 			}
 			
+			if(v)
+			{
+				r.showLog(pl.getDispatcher());
+			}
+			
 			return k;
 		}
 		
 		catch(Exception e)
 		{
 			e.printStackTrace();
+		}
+		
+		if(v)
+		{
+			r.showLog(pl.getDispatcher());
 		}
 		
 		return null;
