@@ -1,0 +1,22 @@
+{
+  "ulticraft.shout.rodah":{"category":"player","sounds":["ulticraft/shout/rodah"]},
+  "ulticraft.shout.halviik":{"category":"player","sounds":["ulticraft/shout/halviik"]},
+  "ulticraft.shout.rumaar":{"category":"player","sounds":["ulticraft/shout/rumaar"]},
+  "ulticraft.shout.slennus":{"category":"player","sounds":["ulticraft/shout/slennus"]},
+  "ulticraft.shout.torshul":{"category":"player","sounds":["ulticraft/shout/torshul"]},
+  "ulticraft.gui.click":{"category":"player","sounds":["ulticraft/gui/click"]},
+  "ulticraft.gui.fail":{"category":"player","sounds":["ulticraft/gui/fail"]},
+  "ulticraft.gui.exit":{"category":"player","sounds":["ulticraft/gui/exit"]},
+  "ulticraft.gui.confirm":{"category":"player","sounds":["ulticraft/gui/confirm"]},
+  "ulticraft.event.fail":{"category":"player","sounds":["ulticraft/event/fail"]},
+  "ulticraft.event.learn":{"category":"player","sounds":["ulticraft/event/learn"]},
+  "ulticraft.event.levelup":{"category":"player","sounds":["ulticraft/event/levelup"]},
+  "ulticraft.event.unlock":{"category":"player","sounds":["ulticraft/event/unlock"]},
+  "ulticraft.event.join":{"category":"player","sounds":["ulticraft/event/join"]},
+  "ulticraft.event.repair":{"category":"player","sounds":["ulticraft/event/repair"]},
+  "ulticraft.event.quit":{"category":"player","sounds":["ulticraft/event/quit"]},
+  "ulticraft.event.translation":{"category":"player","sounds":["ulticraft/event/translation"]},
+  "ulticraft.spell.shock.fire":{"category":"player","sounds":["ulticraft/spell/shock/fire1","ulticraft/spell/shock/fire2"]},
+  "ulticraft.spell.fireball.fire":{"category":"player","sounds":["ulticraft/spell/fireball/fire"]},
+  "ulticraft.spell.frost.fire":{"category":"player","sounds":["ulticraft/spell/frost/fire"]}
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel=icon href=favicon.png sizes="32x32" type="image/png">
+		<title>Ulticraft Commands</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="landing">
+		<!-- Header -->
+<header id="header">
+			<h1><a href="http://ulticraft.com/">Ulticraft</a></h1>
+			<nav id="nav">
+				<ul>
+					<li><a href="http://ulticraft.com/">Home</a></li>
+					<li><a href="connect">Connect</a></li>
+					<li><a href="support">Support</a></li>
+					<li><a href="develop">Develop</a></li>
+					<li><a href="store">Store</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Two -->
+			<section id="two" class="wrapper style2 align-center">
+				<div class="container">
+					<header>
+						<h2>Packed with features all documented here!</h2>
+						<p>Check out what spells there are, and how you can use them!</p>
+					</header>
+					<body>
+					</body>
+				</div>
+			</section>
+			
+			<section id="one" class="wrapper style1 align-center">
+				<div class="container">
+					<header>
+						<h2>Skills</h2>
+						<p>Spells are different than perks. They do not require gems or any sort of currency to unlock. In the beginning, you will have access to only a few spells spanning across different skills. By using these spells, you will soon differ from other players, by specializing in different skill sets.</p>
+					</header>
+				</div>
+			</section>
+			
+			<section id="two" class="wrapper style2 align-left">
+				<div class="container">
+					<body>
+						<table>
+              <tr>
+                <td>Destruction</td>
+                <td>Your ability to destroy the world, all it's entities & objects within.</td>
+              </tr>
+              <tr>
+                <td>Restoration</td>
+                <td>Your ability to restore the world, all it's entities & objects within.</td>
+              </tr>
+              <tr>
+                <td>Conjuration</td>
+                <td>Your ability to conjure in the world, conjure entities & objects within.</td>
+              </tr>
+              <tr>
+                <td>Resistance</td>
+                <td>Your ability to resist destruction in the world, entities & objects within.</td>
+              </tr>
+              <tr>
+                <td>Enchanting</td>
+                <td>Your ability to enchant spells onto tools and armor or weapons, effectivley</td>
+              </tr>
+              <tr>
+                <td>Movement</td>
+                <td>Your ability to move swiftly throughout the world.</td>
+              </tr>
+            </table>
+					</body>
+				</div>
+			</section>
+			
+			<section id="one" class="wrapper style1 align-center">
+				<div class="container">
+					<header>
+						<h2>Spells</h2>
+						<p>Each spell is within it's own skill set. Leveling up on any skill will gain you access to more powerful spells within that skill set. Please have a look below at all of the current spells active.</p>
+					</header>
+				</div>
+			</section>
+      
+			<section id="two" class="wrapper style2 align-left">
+				<div class="container">
+					<body>
+            <h2>Destruction Spells</h2>
+						<table>
+              <tr>
+                <td>Flames</td>
+                <td>Shoot flames from the palm of your hand</td>
+              </tr>
+              <tr>
+                <td>Shock</td>
+                <td>Shoot sparks from the palm of your hand</td>
+              </tr>
+              <tr>
+                <td>Frost</td>
+                <td>Shoot frost from the palm of your hand</td>
+              </tr>
+            </table>
+            <h2>Restoration Spells</h2>
+						<table>
+              <tr>
+                <td>Health</td>
+                <td>Restore your health and hunger</td>
+              </tr>
+              <tr>
+                <td>Heal Area</td>
+                <td>Heal an area of entities or allies in one burst</td>
+              </tr>
+            </table>
+					</body>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<div class="row">
+						<section class="4u 6u(medium) 12u$(small)">
+							<h3>Links</h3>
+							<p>All links here will take you to different parts of the ulticraft community & other places!</p>
+							<ul class="alt">
+								<li><a href="http://ulticraft.com/forum">Ulticraft Forums</a></li>
+								<li><a href="http://ulticraft.com/support">Help Page</a></li>
+								<li><a href="http://get.ulticraft.com/">Get the FREE app!</a></li>
+							</ul>
+						</section>
+						<section class="4u$ 12u$(medium) 12u$(small)">
+							<h3>Contact Us on the Forums!</h3>
+						</section>
+					</div>
+					<ul class="copyright">
+						<li>&copy; Overcode Technologies. All rights reserved.</li>
+					</ul>
+				</div>
+			</footer>
+	</body>
+</html>
