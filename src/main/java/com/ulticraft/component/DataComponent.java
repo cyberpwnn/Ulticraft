@@ -1,11 +1,12 @@
 package com.ulticraft.component;
 
+import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.composite.PlayerData;
 import com.ulticraft.uapi.Component;
-import com.ulticraft.uapi.DataManager;
 
-public class DataComponent extends Component
+public class DataComponent extends Component implements Listener
 {
 	public DataComponent(Ulticraft pl)
 	{
@@ -15,14 +16,17 @@ public class DataComponent extends Component
 	public void enable()
 	{
 		super.enable();
-		
-		PlayerData pd = new PlayerData();
-		DataManager dm = new DataManager(pl, "test");
-		dm.writeYAML(pd, true);
+		pl.register(this);
 	}
 	
 	public void disable()
 	{
-		super.enable();
+		pl.unRegister(this);
+		super.disable();
+	}
+	
+	public void retreive(Player player)
+	{
+		pl.getDatabase().find(PlayerData.class);
 	}
 }

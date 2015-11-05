@@ -1,5 +1,7 @@
 package com.ulticraft;
 
+import org.bukkit.event.HandlerList;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.ulticraft.component.DataComponent;
 import com.ulticraft.component.GemsComponent;
@@ -34,6 +36,16 @@ public class Ulticraft extends JavaPlugin
 	public void onDisable()
 	{
 		componentManager.disable();
+	}
+	
+	public void register(Listener listener)
+	{
+		getServer().getPluginManager().registerEvents(listener, this);
+	}
+	
+	public void unRegister(Listener listener)
+	{
+		HandlerList.unregisterAll(listener);
 	}
 	
 	public ComponentManager getComponentManager()
