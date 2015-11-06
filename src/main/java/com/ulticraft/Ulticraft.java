@@ -1,7 +1,6 @@
 package com.ulticraft;
 
 import java.util.Collection;
-import javax.management.Notification;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
@@ -11,6 +10,8 @@ import com.ulticraft.component.DataComponent;
 import com.ulticraft.component.GemComponent;
 import com.ulticraft.component.NotificationComponent;
 import com.ulticraft.component.PerkComponent;
+import com.ulticraft.component.SecurityComponent;
+import com.ulticraft.component.SoundComponent;
 import com.ulticraft.component.SpellComponent;
 import com.ulticraft.composite.PlayerData;
 import com.ulticraft.uapi.ComponentManager;
@@ -25,6 +26,8 @@ public class Ulticraft extends JavaPlugin
 	private AchievementComponent achievementComponent;
 	private SpellComponent spellComponent;
 	private NotificationComponent notificationComponent;
+	private SoundComponent soundComponent;
+	private SecurityComponent securityComponent;
 	private Dispatcher dispatcher;
 	
 	public void onEnable()
@@ -38,6 +41,8 @@ public class Ulticraft extends JavaPlugin
 		achievementComponent = new AchievementComponent(this);
 		spellComponent = new SpellComponent(this);
 		notificationComponent = new NotificationComponent(this);
+		soundComponent = new SoundComponent(this);
+		securityComponent = new SecurityComponent(this);
 		
 		componentManager.register(dataComponent);
 		componentManager.register(gemComponent);
@@ -45,6 +50,8 @@ public class Ulticraft extends JavaPlugin
 		componentManager.register(achievementComponent);
 		componentManager.register(spellComponent);
 		componentManager.register(notificationComponent);
+		componentManager.register(soundComponent);
+		componentManager.register(securityComponent);
 		
 		componentManager.enable();
 	}
@@ -94,6 +101,31 @@ public class Ulticraft extends JavaPlugin
 		return componentManager;
 	}
 	
+	public AchievementComponent getAchievementComponent()
+	{
+		return achievementComponent;
+	}
+
+	public SpellComponent getSpellComponent()
+	{
+		return spellComponent;
+	}
+
+	public SecurityComponent getSecurityComponent()
+	{
+		return securityComponent;
+	}
+
+	public NotificationComponent getNotificationComponent()
+	{
+		return notificationComponent;
+	}
+
+	public SoundComponent getSoundComponent()
+	{
+		return soundComponent;
+	}
+
 	public DataComponent getDataComponent()
 	{
 		return dataComponent;

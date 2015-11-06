@@ -27,13 +27,14 @@ public class DataComponent extends Component implements Listener
 	
 	public void enable()
 	{
-		super.enable();
 		pl.register(this);
 		
 		for(Player i : pl.onlinePlayers())
 		{
 			join(i);
 		}
+		
+		super.enable();
 	}
 	
 	public void disable()
