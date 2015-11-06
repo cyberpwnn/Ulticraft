@@ -1,13 +1,14 @@
 package com.ulticraft.component;
 
+import org.bukkit.event.Listener;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.uapi.Component;
 import com.ulticraft.uapi.Depend;
 
-@Depend(GemsComponent.class)
-public class PerksComponent extends Component
+@Depend(GemComponent.class)
+public class AchievementComponent extends Component implements Listener
 {
-	public PerksComponent(Ulticraft pl)
+	public AchievementComponent(Ulticraft pl)
 	{
 		super(pl);
 	}
@@ -19,6 +20,6 @@ public class PerksComponent extends Component
 	
 	public void disable()
 	{
-		super.enable();
+		super.disable();
 	}
 }

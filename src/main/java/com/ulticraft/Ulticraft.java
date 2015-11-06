@@ -1,13 +1,18 @@
 package com.ulticraft;
 
 import java.util.Collection;
+import javax.management.Notification;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
+import com.ulticraft.component.AchievementComponent;
 import com.ulticraft.component.DataComponent;
-import com.ulticraft.component.GemsComponent;
-import com.ulticraft.component.PerksComponent;
+import com.ulticraft.component.GemComponent;
+import com.ulticraft.component.NotificationComponent;
+import com.ulticraft.component.PerkComponent;
+import com.ulticraft.component.SpellComponent;
+import com.ulticraft.composite.PlayerData;
 import com.ulticraft.uapi.ComponentManager;
 import com.ulticraft.uapi.Dispatcher;
 
@@ -15,8 +20,11 @@ public class Ulticraft extends JavaPlugin
 {
 	private ComponentManager componentManager;
 	private DataComponent dataComponent;
-	private GemsComponent gemsComponent;
-	private PerksComponent perksComponent;
+	private GemComponent gemComponent;
+	private PerkComponent perkComponent;
+	private AchievementComponent achievementComponent;
+	private SpellComponent spellComponent;
+	private NotificationComponent notificationComponent;
 	private Dispatcher dispatcher;
 	
 	public void onEnable()
@@ -25,12 +33,18 @@ public class Ulticraft extends JavaPlugin
 		componentManager = new ComponentManager(this);
 		
 		dataComponent = new DataComponent(this);
-		gemsComponent = new GemsComponent(this);
-		perksComponent = new PerksComponent(this);
+		gemComponent = new GemComponent(this);
+		perkComponent = new PerkComponent(this);
+		achievementComponent = new AchievementComponent(this);
+		spellComponent = new SpellComponent(this);
+		notificationComponent = new NotificationComponent(this);
 		
 		componentManager.register(dataComponent);
-		componentManager.register(gemsComponent);
-		componentManager.register(perksComponent);
+		componentManager.register(gemComponent);
+		componentManager.register(perkComponent);
+		componentManager.register(achievementComponent);
+		componentManager.register(spellComponent);
+		componentManager.register(notificationComponent);
 		
 		componentManager.enable();
 	}
@@ -70,6 +84,11 @@ public class Ulticraft extends JavaPlugin
 		HandlerList.unregisterAll(listener);
 	}
 	
+	public PlayerData gpd(Player player)
+	{
+		return dataComponent.get(player);
+	}
+	
 	public ComponentManager getComponentManager()
 	{
 		return componentManager;
@@ -80,14 +99,14 @@ public class Ulticraft extends JavaPlugin
 		return dataComponent;
 	}
 	
-	public GemsComponent getGemsComponent()
+	public GemComponent getGemComponent()
 	{
-		return gemsComponent;
+		return gemComponent;
 	}
 	
-	public PerksComponent getPerksComponent()
+	public PerkComponent getPerkComponent()
 	{
-		return perksComponent;
+		return perkComponent;
 	}
 	
 	public Dispatcher getDispatcher()

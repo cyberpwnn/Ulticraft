@@ -9,18 +9,15 @@ import com.ulticraft.Ulticraft;
 public class DataManager
 {
 	private File file;
-	private Ulticraft pl;
 	
 	public DataManager(Ulticraft pl, String localPath)
 	{
 		file = new File(pl.getDataFolder(), localPath);
-		this.pl = pl;
 	}
 	
 	public DataManager(Ulticraft pl, File file)
 	{
 		this.file = file;
-		this.pl = pl;
 	}
 	
 	public void writeYAML(Object o)
@@ -44,8 +41,6 @@ public class DataManager
 		{
 			e.printStackTrace();
 		}
-		
-		r.showLog(pl.getDispatcher());
 	}
 	
 	public Object readYAML(Class<?> clazz)
@@ -75,7 +70,6 @@ public class DataManager
 				}
 			}
 			
-			r.showLog(pl.getDispatcher());
 			return k;
 		}
 		
@@ -84,7 +78,6 @@ public class DataManager
 			e.printStackTrace();
 		}
 		
-		r.showLog(pl.getDispatcher());
 		return null;
 	}
 	
