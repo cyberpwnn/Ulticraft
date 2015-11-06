@@ -29,11 +29,22 @@ public class DataComponent extends Component implements Listener
 	{
 		super.enable();
 		pl.register(this);
+		
+		for(Player i : pl.onlinePlayers())
+		{
+			join(i);
+		}
 	}
 	
 	public void disable()
 	{
 		pl.unRegister(this);
+		
+		for(Player i : pl.onlinePlayers())
+		{
+			quit(i);
+		}
+		
 		super.disable();
 	}
 	
@@ -41,12 +52,14 @@ public class DataComponent extends Component implements Listener
 	{
 		PlayerData pd = new PlayerData(player);
 		cache.put(player, pd);
+		pl.o("Created Player " + player.getUniqueId().toString());
 	}
 	
 	public void load(Player player)
 	{
 		if(cache.containsKey(player))
 		{
+			pl.f("Failed to find Player " + player.getUniqueId().toString());
 			return;
 		}
 		
@@ -56,6 +69,12 @@ public class DataComponent extends Component implements Listener
 		if(pd != null)
 		{
 			cache.put(player, pd);
+			pl.o("Loaded Player " + player.getUniqueId().toString());
+		}
+		
+		else
+		{
+			pl.f("Failed to load Player " + player.getUniqueId().toString());
 		}
 	}
 	
@@ -64,9 +83,11 @@ public class DataComponent extends Component implements Listener
 		if(flush(player))
 		{
 			cache.remove(player);
+			pl.o("Saved Player " + player.getUniqueId().toString());
 			return true;
 		}
 		
+		pl.f("Failed to save Player " + player.getUniqueId().toString());
 		return false;
 	}
 	
@@ -74,12 +95,24 @@ public class DataComponent extends Component implements Listener
 	{
 		if(!cache.containsKey(player))
 		{
+			pl.f("Failed to find (flush) Player " + player.getUniqueId().toString());
 			return false;
 		}
 		
 		DataManager dm = new DataManager(pl, toFileName(player));
-		dm.writeYAML(get(player));
+		PlayerData pd = get(player);
 		
+		if(pd != null)
+		{
+			dm.writeYAML(pd);
+		}
+		
+		else
+		{
+			pl.f("Failed to flush player " + player.getUniqueId().toString());
+		}
+		
+		pl.o("Flushed Player " + player.getUniqueId().toString());
 		return true;
 	}
 	
@@ -87,6 +120,7 @@ public class DataComponent extends Component implements Listener
 	{
 		if(!cache.containsKey(player))
 		{
+			pl.f("Failed to find Player " + player.getUniqueId().toString());
 			load(player);
 		}
 		
@@ -134,9 +168,11 @@ public class DataComponent extends Component implements Listener
 	{
 		if(!dir.getParentFile().exists())
 		{
+			
 			verify(dir.getParentFile());
 		}
 		
+		pl.o("Creating Directory " + dir.getPath());
 		dir.mkdir();
 	}
 	
@@ -149,6 +185,7 @@ public class DataComponent extends Component implements Listener
 		
 		try
 		{
+			pl.o("Creating File " + file.getPath());
 			file.createNewFile();
 		}
 		

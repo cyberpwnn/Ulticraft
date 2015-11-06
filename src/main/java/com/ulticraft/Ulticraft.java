@@ -1,5 +1,7 @@
 package com.ulticraft;
 
+import java.util.Collection;
+import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -33,6 +35,26 @@ public class Ulticraft extends JavaPlugin
 		componentManager.enable();
 	}
 	
+	public int scheduleSyncRepeatingTask(int delay, int interval, Runnable runnable)
+	{
+		return getServer().getScheduler().scheduleSyncRepeatingTask(this, runnable, delay, interval);
+	}
+	
+	public int scheduleSyncTask(int delay, Runnable runnable)
+	{
+		return getServer().getScheduler().scheduleSyncDelayedTask(this, runnable, delay);
+	}
+	
+	public void cancelTask(int tid)
+	{
+		getServer().getScheduler().cancelTask(tid);
+	}
+	
+	public Collection<? extends Player> onlinePlayers()
+	{
+		return getServer().getOnlinePlayers();
+	}
+	
 	public void onDisable()
 	{
 		componentManager.disable();
@@ -52,27 +74,27 @@ public class Ulticraft extends JavaPlugin
 	{
 		return componentManager;
 	}
-
+	
 	public DataComponent getDataComponent()
 	{
 		return dataComponent;
 	}
-
+	
 	public GemsComponent getGemsComponent()
 	{
 		return gemsComponent;
 	}
-
+	
 	public PerksComponent getPerksComponent()
 	{
 		return perksComponent;
 	}
-
+	
 	public Dispatcher getDispatcher()
 	{
 		return dispatcher;
 	}
-
+	
 	public void i(String... o)
 	{
 		dispatcher.info(o);

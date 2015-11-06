@@ -38,7 +38,7 @@ public class Reflector
 	{
 		for(String i : log)
 		{
-			d.info(i);
+			d.overbose(i);
 		}
 	}
 	

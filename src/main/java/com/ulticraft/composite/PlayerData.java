@@ -2,11 +2,10 @@ package com.ulticraft.composite;
 
 import org.bukkit.entity.Player;
 import com.ulticraft.uapi.CommonUtil;
+import com.ulticraft.uapi.Table;
 
-public class PlayerData
+public class PlayerData implements Table
 {
-    private long id;
-	
 	// Identity
 	private String uuid;
 	private String name;
@@ -73,15 +72,10 @@ public class PlayerData
 		this.magicFrosts = 0;
 		this.magicRushes = 0;
 	}
-
-	public long getId()
+	
+	public PlayerData()
 	{
-		return id;
-	}
-
-	public void setId(long id)
-	{
-		this.id = id;
+		
 	}
 
 	public String getUuid()
