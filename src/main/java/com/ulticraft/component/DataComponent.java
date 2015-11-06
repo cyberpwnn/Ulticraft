@@ -1,9 +1,7 @@
 package com.ulticraft.component;
 
-import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
 import com.ulticraft.Ulticraft;
-import com.ulticraft.composite.PlayerData;
 import com.ulticraft.uapi.Component;
 
 public class DataComponent extends Component implements Listener
@@ -23,10 +21,5 @@ public class DataComponent extends Component implements Listener
 	{
 		pl.unRegister(this);
 		super.disable();
-	}
-	
-	public void retreive(Player player)
-	{
-		pl.getDatabase().find(PlayerData.class);
 	}
 }

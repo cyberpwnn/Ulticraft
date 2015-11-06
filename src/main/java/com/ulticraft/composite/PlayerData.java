@@ -1,27 +1,18 @@
 package com.ulticraft.composite;
 
-import java.util.UUID;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import org.bukkit.entity.Player;
 import com.ulticraft.uapi.CommonUtil;
-import com.ulticraft.uapi.UList;
 
-@Entity
 public class PlayerData
 {
-	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
 	
 	// Identity
-	private UUID uuid;
+	private String uuid;
 	private String name;
-	private UList<String> names;
+	private String names;
 	private String address;
-	private UList<String> addresses;
+	private String addresses;
 	private String lastLogin;
 	private String firstLogin;
 	
@@ -31,9 +22,9 @@ public class PlayerData
 	private Float mana;
 	private Float manaRegen;
 	private Float manaMax;
-	private UList<String> perks;
-	private UList<String> spells;
-	private	UList<UUID> friends;
+	private String perks;
+	private String spells;
+	private	String friends;
 	
 	// Statistics
 	private Integer blockBreak;
@@ -51,11 +42,11 @@ public class PlayerData
 	public PlayerData(Player player)
 	{
 		//Identity
-		this.uuid = player.getUniqueId();
+		this.uuid = player.getUniqueId().toString();
 		this.name = player.getName();
-		this.names = new UList<String>();
+		this.names = "";
 		this.address = CommonUtil.date();
-		this.addresses = new UList<String>();
+		this.addresses = "";
 		this.lastLogin = CommonUtil.address(player.getAddress());
 		this.firstLogin = lastLogin;
 		
@@ -65,9 +56,9 @@ public class PlayerData
 		this.mana = 0f;
 		this.manaRegen = 1f;
 		this.manaMax = 100f;
-		this.perks = new UList<String>();
-		this.spells = new UList<String>();
-		this.friends = new UList<UUID>();
+		this.perks = "";
+		this.spells = "";
+		this.friends = "";
 		
 		//Statistics
 		this.blockBreak = 0;
@@ -82,11 +73,6 @@ public class PlayerData
 		this.magicFrosts = 0;
 		this.magicRushes = 0;
 	}
-	
-	protected PlayerData()
-	{
-		
-	}
 
 	public long getId()
 	{
@@ -98,12 +84,12 @@ public class PlayerData
 		this.id = id;
 	}
 
-	public UUID getUuid()
+	public String getUuid()
 	{
 		return uuid;
 	}
 
-	public void setUuid(UUID uuid)
+	public void setUuid(String uuid)
 	{
 		this.uuid = uuid;
 	}
@@ -118,12 +104,12 @@ public class PlayerData
 		this.name = name;
 	}
 
-	public UList<String> getNames()
+	public String getNames()
 	{
 		return names;
 	}
 
-	public void setNames(UList<String> names)
+	public void setNames(String names)
 	{
 		this.names = names;
 	}
@@ -138,12 +124,12 @@ public class PlayerData
 		this.address = address;
 	}
 
-	public UList<String> getAddresses()
+	public String getAddresses()
 	{
 		return addresses;
 	}
 
-	public void setAddresses(UList<String> addresses)
+	public void setAddresses(String addresses)
 	{
 		this.addresses = addresses;
 	}
@@ -218,32 +204,32 @@ public class PlayerData
 		this.manaMax = manaMax;
 	}
 
-	public UList<String> getPerks()
+	public String getPerks()
 	{
 		return perks;
 	}
 
-	public void setPerks(UList<String> perks)
+	public void setPerks(String perks)
 	{
 		this.perks = perks;
 	}
 
-	public UList<String> getSpells()
+	public String getSpells()
 	{
 		return spells;
 	}
 
-	public void setSpells(UList<String> spells)
+	public void setSpells(String spells)
 	{
 		this.spells = spells;
 	}
 
-	public UList<UUID> getFriends()
+	public String getFriends()
 	{
 		return friends;
 	}
 
-	public void setFriends(UList<UUID> friends)
+	public void setFriends(String friends)
 	{
 		this.friends = friends;
 	}
