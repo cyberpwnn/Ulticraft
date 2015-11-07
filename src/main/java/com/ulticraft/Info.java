@@ -12,4 +12,7 @@ public class Info
 	public static final String STAT_MAGICSHOCKS = "Magic Shocks";
 	public static final String STAT_MAGICFLAMES = "Magic Flames";
 	public static final String STAT_MAGICRUSHES = "Magic Rushes";
+	
+	public static final char DINGBAT_HEX_EMPTY = '\u2B21';
+	public static final char DINGBAT_HEX_HEAVY = '\u2B22';
 }

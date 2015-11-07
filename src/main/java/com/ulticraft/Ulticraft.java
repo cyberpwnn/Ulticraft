@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.ulticraft.component.AchievementComponent;
 import com.ulticraft.component.DataComponent;
 import com.ulticraft.component.GemComponent;
+import com.ulticraft.component.ManaComponent;
 import com.ulticraft.component.NotificationComponent;
 import com.ulticraft.component.PerkComponent;
 import com.ulticraft.component.SecurityComponent;
@@ -28,6 +29,7 @@ public class Ulticraft extends JavaPlugin
 	private NotificationComponent notificationComponent;
 	private SoundComponent soundComponent;
 	private SecurityComponent securityComponent;
+	private ManaComponent manaComponent;
 	private Dispatcher dispatcher;
 	
 	public void onEnable()
@@ -42,6 +44,7 @@ public class Ulticraft extends JavaPlugin
 		spellComponent = new SpellComponent(this);
 		notificationComponent = new NotificationComponent(this);
 		soundComponent = new SoundComponent(this);
+		manaComponent = new ManaComponent(this);
 		securityComponent = new SecurityComponent(this);
 		
 		componentManager.register(dataComponent);
@@ -52,6 +55,7 @@ public class Ulticraft extends JavaPlugin
 		componentManager.register(notificationComponent);
 		componentManager.register(soundComponent);
 		componentManager.register(securityComponent);
+		componentManager.register(manaComponent);
 		
 		componentManager.enable();
 	}
@@ -101,31 +105,36 @@ public class Ulticraft extends JavaPlugin
 		return componentManager;
 	}
 	
+	public ManaComponent getManaComponent()
+	{
+		return manaComponent;
+	}
+	
 	public AchievementComponent getAchievementComponent()
 	{
 		return achievementComponent;
 	}
-
+	
 	public SpellComponent getSpellComponent()
 	{
 		return spellComponent;
 	}
-
+	
 	public SecurityComponent getSecurityComponent()
 	{
 		return securityComponent;
 	}
-
+	
 	public NotificationComponent getNotificationComponent()
 	{
 		return notificationComponent;
 	}
-
+	
 	public SoundComponent getSoundComponent()
 	{
 		return soundComponent;
 	}
-
+	
 	public DataComponent getDataComponent()
 	{
 		return dataComponent;

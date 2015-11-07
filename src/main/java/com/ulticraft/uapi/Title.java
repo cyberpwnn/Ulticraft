@@ -18,7 +18,7 @@ public class Title
 	private ChatColor titleColor;
 	private String subtitle;
 	private ChatColor subtitleColor;
-	private String actionBarText;
+	private String subSubTitle;
 	private int fadeInTime;
 	private int stayTime;
 	private int fadeOutTime;
@@ -47,9 +47,9 @@ public class Title
 		this.titleColor = ChatColor.WHITE;
 		this.subtitle = "";
 		this.subtitleColor = ChatColor.WHITE;
-		this.fadeInTime = -1;
-		this.stayTime = -1;
-		this.fadeOutTime = -1;
+		this.fadeInTime = 5;
+		this.stayTime = 30;
+		this.fadeOutTime = 30;
 		this.loadClasses();
 	}
 	
@@ -59,9 +59,9 @@ public class Title
 		this.titleColor = ChatColor.WHITE;
 		this.subtitle = "";
 		this.subtitleColor = ChatColor.WHITE;
-		this.fadeInTime = -1;
-		this.stayTime = -1;
-		this.fadeOutTime = -1;
+		this.fadeInTime = 5;
+		this.stayTime = 30;
+		this.fadeOutTime = 30;
 		this.title = title;
 		this.loadClasses();
 	}
@@ -72,11 +72,26 @@ public class Title
 		this.titleColor = ChatColor.WHITE;
 		this.subtitle = "";
 		this.subtitleColor = ChatColor.WHITE;
-		this.fadeInTime = -1;
-		this.stayTime = -1;
-		this.fadeOutTime = -1;
+		this.fadeInTime = 5;
+		this.stayTime = 30;
+		this.fadeOutTime = 30;
 		this.title = title;
 		this.subtitle = subtitle;
+		this.loadClasses();
+	}
+	
+	public Title(String title, String subtitle, String subSubTitle)
+	{
+		this.title = "";
+		this.titleColor = ChatColor.WHITE;
+		this.subtitle = "";
+		this.subtitleColor = ChatColor.WHITE;
+		this.fadeInTime = 5;
+		this.stayTime = 30;
+		this.fadeOutTime = 30;
+		this.title = title;
+		this.subtitle = subtitle;
+		this.subSubTitle = subSubTitle;
 		this.loadClasses();
 	}
 	
@@ -86,9 +101,9 @@ public class Title
 		this.titleColor = ChatColor.WHITE;
 		this.subtitle = "";
 		this.subtitleColor = ChatColor.WHITE;
-		this.fadeInTime = -1;
-		this.stayTime = -1;
-		this.fadeOutTime = -1;
+		this.fadeInTime = 5;
+		this.stayTime = 30;
+		this.fadeOutTime = 30;
 		this.title = title.title;
 		this.subtitle = title.subtitle;
 		this.titleColor = title.titleColor;
@@ -96,7 +111,7 @@ public class Title
 		this.fadeInTime = title.fadeInTime;
 		this.fadeOutTime = title.fadeOutTime;
 		this.stayTime = title.stayTime;
-		this.actionBarText = title.getActionBarText();
+		this.subSubTitle = title.getSubSubTitle();
 		this.loadClasses();
 	}
 	
@@ -106,14 +121,32 @@ public class Title
 		this.titleColor = ChatColor.WHITE;
 		this.subtitle = "";
 		this.subtitleColor = ChatColor.WHITE;
-		this.fadeInTime = -1;
-		this.stayTime = -1;
-		this.fadeOutTime = -1;
+		this.fadeInTime = 5;
+		this.stayTime = 30;
+		this.fadeOutTime = 30;
 		this.title = title;
 		this.subtitle = subtitle;
 		this.fadeInTime = fadeInTime;
 		this.stayTime = stayTime;
 		this.fadeOutTime = fadeOutTime;
+		this.loadClasses();
+	}
+	
+	public Title(String title, String subtitle, String subSubTitle, int fadeInTime, int stayTime, int fadeOutTime)
+	{
+		this.title = "";
+		this.titleColor = ChatColor.WHITE;
+		this.subtitle = "";
+		this.subtitleColor = ChatColor.WHITE;
+		this.fadeInTime = 5;
+		this.stayTime = 30;
+		this.fadeOutTime = 30;
+		this.title = title;
+		this.subtitle = subtitle;
+		this.fadeInTime = fadeInTime;
+		this.stayTime = stayTime;
+		this.fadeOutTime = fadeOutTime;
+		this.subSubTitle = subSubTitle;
 		this.loadClasses();
 	}
 	
@@ -125,14 +158,14 @@ public class Title
 		this.nmsChatSerializer = this.getNMSClass("IChatBaseComponent$ChatSerializer");
 	}
 	
-	public String getActionBarText()
+	public String getSubSubTitle()
 	{
-		return actionBarText;
+		return subSubTitle;
 	}
 	
-	public void setActionBarText(String actionBarText)
+	public void setSubSubTitle(String subSubTitle)
 	{
-		this.actionBarText = actionBarText;
+		this.subSubTitle = subSubTitle;
 	}
 	
 	public int getFadeInTime()
@@ -197,6 +230,21 @@ public class Title
 	
 	public void send(Player player)
 	{
+		if(title == null || title.equals(""))
+		{
+			title = " ";
+		}
+		
+		if(subtitle == null || subtitle.equals(""))
+		{
+			subtitle = " ";
+		}
+		
+		if(subSubTitle == null || subSubTitle.equals(""))
+		{
+			subSubTitle = " ";
+		}
+		
 		if(this.packetTitle != null)
 		{
 			this.resetTitle(player);
@@ -223,7 +271,7 @@ public class Title
 					sendPacket.invoke(connection, packet);
 				}
 				
-				if(getActionBarText() != null && !getActionBarText().isEmpty())
+				if(getSubSubTitle() != null && !getSubSubTitle().isEmpty())
 				{
 					String nmsver = player.getServer().getClass().getPackage().getName();
 					nmsver = nmsver.substring(nmsver.lastIndexOf(".") + 1);
@@ -239,7 +287,7 @@ public class Title
 						Class<?> c2 = Class.forName("net.minecraft.server." + nmsver + ".ChatSerializer");
 						Class<?> c3 = Class.forName("net.minecraft.server." + nmsver + ".IChatBaseComponent");
 						Method m3 = c2.getDeclaredMethod("a", new Class<?>[] { String.class });
-						Object cbc = c3.cast(m3.invoke(c2, "{\"text\": \"" + getActionBarText() + "\"}"));
+						Object cbc = c3.cast(m3.invoke(c2, "{\"text\": \"" + getSubSubTitle() + "\"}"));
 						ppoc = c4.getConstructor(new Class<?>[] { c3, byte.class }).newInstance(new Object[] { cbc, (byte) 2 });
 					}
 					
@@ -247,7 +295,7 @@ public class Title
 					{
 						Class<?> c2 = Class.forName("net.minecraft.server." + nmsver + ".ChatComponentText");
 						Class<?> c3 = Class.forName("net.minecraft.server." + nmsver + ".IChatBaseComponent");
-						Object o = c2.getConstructor(new Class<?>[] { String.class }).newInstance(new Object[] { getActionBarText() });
+						Object o = c2.getConstructor(new Class<?>[] { String.class }).newInstance(new Object[] { getSubSubTitle() });
 						ppoc = c4.getConstructor(new Class<?>[] { c3, byte.class }).newInstance(new Object[] { o, (byte) 2 });
 					}
 					

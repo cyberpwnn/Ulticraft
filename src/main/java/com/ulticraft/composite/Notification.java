@@ -1,70 +1,107 @@
 package com.ulticraft.composite;
 
+import org.bukkit.entity.Player;
 import com.ulticraft.uapi.NotificationPriority;
 import com.ulticraft.uapi.Title;
+import com.ulticraft.uapi.UList;
 import com.ulticraft.uapi.USound;
 
 public class Notification
 {
-	private Title title;
+	private String title;
+	private String subTitle;
+	private String subSubTitle;
 	private USound sound;
 	private NotificationPriority priority;
+	private UList<String> messages;
 	
-	public Notification(Title title, USound sound, NotificationPriority priority)
+	public Notification()
 	{
-		this.title = title;
-		this.sound = sound;
-		this.priority = priority;
+		priority = NotificationPriority.MEDIUM;
+		messages = new UList<String>();
 	}
 	
-	public Notification(Title title, NotificationPriority priority)
+	public void send(Player p)
 	{
-		this.title = title;
-		this.sound = null;
-		this.priority = priority;
+		new Title(title, subTitle, subSubTitle).send(p);
+		
+		for(String i : messages)
+		{
+			p.sendMessage(i);
+		}
+		
+		sound.play(p);
 	}
 	
-	public Notification(Title title, USound sound)
+	public Notification addMessage(String message)
 	{
-		this.title = title;
-		this.sound = sound;
-		this.priority = NotificationPriority.MEDIUM;
+		messages.add(message);
+		return this;
 	}
 	
-	public Notification(Title title)
+	public UList<String> getMessages()
 	{
-		this.title = title;
-		this.sound = null;
-		this.priority = NotificationPriority.MEDIUM;
+		return messages;
 	}
-
-	public Title getTitle()
+	
+	public Notification setMessages(UList<String> messages)
+	{
+		this.messages = messages;
+		return this;
+	}
+	
+	public String getTitle()
 	{
 		return title;
 	}
-
-	public void setTitle(Title title)
+	
+	public Notification setTitle(String title)
 	{
 		this.title = title;
+		return this;
 	}
-
+	
+	public String getSubTitle()
+	{
+		return subTitle;
+	}
+	
+	public Notification setSubTitle(String subTitle)
+	{
+		this.subTitle = subTitle;
+		return this;
+	}
+	
+	public String getSubSubTitle()
+	{
+		return subSubTitle;
+	}
+	
+	public Notification setSubSubTitle(String subSubTitle)
+	{
+		this.subSubTitle = subSubTitle;
+		return this;
+	}
+	
 	public USound getSound()
 	{
 		return sound;
 	}
-
-	public void setSound(USound sound)
+	
+	public Notification setSound(USound sound)
 	{
 		this.sound = sound;
+		return this;
 	}
-
+	
 	public NotificationPriority getPriority()
 	{
 		return priority;
 	}
-
-	public void setPriority(NotificationPriority priority)
+	
+	public Notification setPriority(NotificationPriority priority)
 	{
 		this.priority = priority;
+		return this;
 	}
 }

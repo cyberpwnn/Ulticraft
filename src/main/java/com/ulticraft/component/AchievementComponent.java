@@ -14,6 +14,7 @@ public class AchievementComponent extends Component implements Listener
 	public AchievementComponent(Ulticraft pl)
 	{
 		super(pl);
+		pl.register(this);
 	}
 	
 	public void enable()
@@ -29,6 +30,6 @@ public class AchievementComponent extends Component implements Listener
 	@EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
 	public void onPlayer(BlockBreakEvent e)
 	{
-		
+
 	}
 }
