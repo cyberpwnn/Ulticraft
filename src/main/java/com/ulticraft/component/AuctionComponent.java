@@ -17,6 +17,6 @@ public class AuctionComponent extends Component
 	
 	public void disable()
 	{
-		super.enable();
+		super.disable();
 	}
 }
