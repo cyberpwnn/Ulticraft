@@ -30,6 +30,6 @@ public class AchievementComponent extends Component implements Listener
 	@EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
 	public void onPlayer(BlockBreakEvent e)
 	{
-
+		pl.getManaComponent().setMana(e.getPlayer(), 0f);
 	}
 }
