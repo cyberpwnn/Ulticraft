@@ -6,6 +6,7 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.ulticraft.component.AchievementComponent;
+import com.ulticraft.component.AuctionComponent;
 import com.ulticraft.component.DataComponent;
 import com.ulticraft.component.GemComponent;
 import com.ulticraft.component.ManaComponent;
@@ -30,6 +31,7 @@ public class Ulticraft extends JavaPlugin
 	private SoundComponent soundComponent;
 	private SecurityComponent securityComponent;
 	private ManaComponent manaComponent;
+	private AuctionComponent auctionComponent;
 	private Dispatcher dispatcher;
 	
 	public void onEnable()
@@ -46,6 +48,7 @@ public class Ulticraft extends JavaPlugin
 		soundComponent = new SoundComponent(this);
 		manaComponent = new ManaComponent(this);
 		securityComponent = new SecurityComponent(this);
+		auctionComponent = new AuctionComponent(this);
 		
 		componentManager.register(dataComponent);
 		componentManager.register(gemComponent);
@@ -55,6 +58,7 @@ public class Ulticraft extends JavaPlugin
 		componentManager.register(notificationComponent);
 		componentManager.register(soundComponent);
 		componentManager.register(securityComponent);
+		componentManager.register(auctionComponent);
 		componentManager.register(manaComponent);
 		
 		componentManager.enable();
@@ -108,6 +112,11 @@ public class Ulticraft extends JavaPlugin
 	public ManaComponent getManaComponent()
 	{
 		return manaComponent;
+	}
+	
+	public AuctionComponent getAuctionComponent()
+	{
+		return auctionComponent;
 	}
 	
 	public AchievementComponent getAchievementComponent()
