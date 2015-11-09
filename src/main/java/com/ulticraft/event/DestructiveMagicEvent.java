@@ -3,6 +3,7 @@ package com.ulticraft.event;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import com.ulticraft.composite.SpellType;
 import com.ulticraft.uapi.UList;
 
 public class DestructiveMagicEvent extends MagicEvent
@@ -10,9 +11,9 @@ public class DestructiveMagicEvent extends MagicEvent
 	private UList<Entity> targetEntities;
 	private UList<Block> targetBlocks;
 	
-	public DestructiveMagicEvent(Player caster, UList<Entity> targetEntities, UList<Block> targetBlocks)
+	public DestructiveMagicEvent(Player caster, SpellType type, UList<Entity> targetEntities, UList<Block> targetBlocks)
 	{
-		super(caster);
+		super(caster, type);
 		this.targetEntities = targetEntities;
 		this.targetBlocks = targetBlocks;
 	}
