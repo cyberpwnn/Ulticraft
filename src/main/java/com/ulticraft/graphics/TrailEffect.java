@@ -84,7 +84,7 @@ public class TrailEffect
 	
 	public void tick(ParticleIteration pi)
 	{
-		
+		draw();
 	}
 	
 	public void draw()
