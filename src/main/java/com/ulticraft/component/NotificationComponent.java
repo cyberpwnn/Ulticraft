@@ -105,7 +105,7 @@ public class NotificationComponent extends Component implements Listener
 	
 	public void displayOngoing(Player p)
 	{
-		new Title(" ", " ", pl.getManaComponent().getManaBar(p)).send(p);
+		new Title(" ", " ", pl.getManaComponent().getBar(p)).send(p);
 	}
 	
 	public void dispatchNotification(Player p, Notification n)

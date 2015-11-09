@@ -26,7 +26,7 @@ public class ManaComponent extends Component
 			{
 				for(Player i : pl.onlinePlayers())
 				{
-					regenMana(i);
+					regen(i);
 				}
 			}
 		});
@@ -37,26 +37,26 @@ public class ManaComponent extends Component
 		super.disable();
 	}
 	
-	public float getMana(Player p)
+	public float get(Player p)
 	{
 		return pl.gpd(p).getMana();
 	}
 	
-	public float getManaMax(Player p)
+	public float getMax(Player p)
 	{
 		return pl.gpd(p).getManaMax();
 	}
 	
-	public float getManaRegen(Player p)
+	public float getRegen(Player p)
 	{
 		return pl.gpd(p).getManaRegen();
 	}
 	
-	public void setMana(Player p, float mana)
+	public void set(Player p, float mana)
 	{
-		if(mana > getManaMax(p))
+		if(mana > getMax(p))
 		{
-			pl.gpd(p).setMana(getManaMax(p));
+			pl.gpd(p).setMana(getMax(p));
 		}
 		
 		else if(mana < 0)
@@ -70,17 +70,67 @@ public class ManaComponent extends Component
 		}
 	}
 	
-	public void regenMana(Player p)
+	public boolean has(Player p, float mana)
 	{
-		setMana(p, getMana(p) + getManaRegen(p));
+		return get(p) >= mana;
 	}
 	
-	public String getManaBar(Player p)
+	public void give(Player p, float mana)
+	{
+		set(p, get(p) + mana);
+	}
+	
+	public void take(Player p, float mana)
+	{
+		if(mana > 0f || !has(p, mana))
+		{
+			return;
+		}
+		
+		set(p, get(p) - mana);
+	}
+	
+	public void setMax(Player p, float max)
+	{
+		pl.gpd(p).setManaMax(max);
+	}
+	
+	public void setRegen(Player p, float regen)
+	{
+		pl.gpd(p).setManaRegen(regen);
+	}
+	
+	public void increaseMax(Player p, float max)
+	{
+		setMax(p, getMax(p) + max);
+	}
+	
+	public void decreaseMax(Player p, float max)
+	{
+		setMax(p, getMax(p) - max);
+	}
+	
+	public void increaseRegen(Player p, float regen)
+	{
+		setRegen(p, getRegen(p) + regen);
+	}
+	
+	public void decreaseRegen(Player p, float regen)
+	{
+		setRegen(p, getRegen(p) - regen);
+	}
+	
+	public void regen(Player p)
+	{
+		give(p, getRegen(p));
+	}
+	
+	public String getBar(Player p)
 	{
 		String bar = "" + ChatColor.LIGHT_PURPLE;
-		Float mana = getMana(p);
+		Float mana = get(p);
 		
-		if(mana != getManaMax(p))
+		if(mana != getMax(p))
 		{
 			if(mana < Info.MANA_BAR_SPLIT)
 			{
