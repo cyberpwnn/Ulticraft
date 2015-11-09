@@ -35,7 +35,7 @@ public class GemComponent extends Component
 	
 	public boolean has(Player p, int g)
 	{
-		return get(p) - g >= 0;
+		return get(p) >= g;
 	}
 	
 	public void give(Player p, int g)
