@@ -195,6 +195,8 @@ public class DataComponent extends Component implements Listener
 	public void onPlayer(PlayerJoinEvent e)
 	{
 		join(e.getPlayer());
+		
+		pl.getPerkComponent().check(e.getPlayer());
 	}
 	
 	@EventHandler

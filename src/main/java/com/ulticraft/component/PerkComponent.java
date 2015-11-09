@@ -112,6 +112,40 @@ public class PerkComponent extends Component
 		return true;
 	}
 	
+	public void check(Player p)
+	{
+		for(Perk i : get())
+		{
+			for(String j : i.getPermissions())
+			{
+				if((!p.hasPermission(j) && has(p, i)) || (p.hasPermission(j) && !has(p, i)))
+				{
+					unlockSilent(p, i);
+					break;
+				}
+			}
+		}
+	}
+	
+	public void unlockSilent(Player p, Perk k)
+	{
+		pl.getPermissionComponent().give(p, k.getPermissions());
+		
+		if(!has(p, k))
+		{
+			pl.gpd(p).setPerks(new UList<String>(pl.gpd(p).getPerks()).qadd(k.getCodeName()).toString(","));
+			pl.w("Issue with " + p.getName() + "'s perk: " + k.getCodeName());
+			pl.w(" > Issue: Had Perms, no perk! (" + Info.ERR_NO_PERK_HAS_PERMS + ")");
+		}
+		
+		else
+		{
+			pl.w(" > Issue: Had Perk, no perms! (" + Info.ERR_NO_PERMS_HAS_PERK + ")");
+		}
+		
+		pl.s(" > " + p.getName() + " now has the perk: " + k.getCodeName() + " and the permissions!");
+	}
+	
 	public void unlock(Player p, Perk k)
 	{
 		if(has(p, k) || !pl.getGemComponent().has(p, k.getCost()) || !has(p, getRequirements(k)))
