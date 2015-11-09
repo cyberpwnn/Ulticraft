@@ -1,7 +1,6 @@
 package com.ulticraft.graphics;
 
 import org.bukkit.Location;
-import org.bukkit.util.Vector;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.uapi.UList;
 import com.ulticraft.uapi.VectorFilter;
@@ -9,10 +8,12 @@ import com.ulticraft.uapi.VectorFilter;
 public class ParticleSystem
 {
 	private UList<Particle> particles;
+	private Location center;
 	
-	public ParticleSystem()
+	public ParticleSystem(Location center)
 	{
-		particles = new UList<Particle>();
+		this.center = center;
+		this.particles = new UList<Particle>();
 	}
 	
 	public void render(Location center)
@@ -23,7 +24,7 @@ public class ParticleSystem
 		}
 	}
 	
-	public void renderSlow(Ulticraft pl, Location center, int rpt)
+	public void renderSlow(Ulticraft pl, int rpt)
 	{
 		final UList<Particle> particles = this.particles.copy();
 		final int[] mt = new int[2];
@@ -39,7 +40,7 @@ public class ParticleSystem
 					if(particles.hasIndex(i))
 					{
 						mt[1]++;
-						particles.get(i).draw(center);
+						particles.get(i).draw(center.clone());
 					}
 					
 					else
@@ -51,28 +52,9 @@ public class ParticleSystem
 		});
 	}
 	
-	public void addLine(Location a, Location b, int segments)
+	public void addLine(Line line)
 	{
-		Vector link = b.toVector().subtract(a.toVector());
-		UList<Location> locations = new UList<Location>();
-		Float length = (float) link.length();
-		Integer step = 0;
-		Float ratio = length / segments;
-		Vector v = link.multiply(ratio);
-		Location loc = a.clone().subtract(v);
-		
-		for(int i = 0; i < segments; i++)
-		{
-			if(step >= segments)
-			{
-				step = 0;
-			}
-			
-			step++;
-			loc.add(v);
-			
-			locations.add(loc.clone());
-		}
+		particles.add(line.getParticles(center.clone()));
 	}
 	
 	public void applyFilter(VectorFilter filter)
@@ -83,16 +65,26 @@ public class ParticleSystem
 		}
 	}
 	
+	public Location getCenter()
+	{
+		return center;
+	}
+	
+	public void setCenter(Location center)
+	{
+		this.center = center;
+	}
+	
 	public void addParticle(Particle p)
 	{
 		particles.add(p);
 	}
-
+	
 	public UList<Particle> getParticles()
 	{
 		return particles;
 	}
-
+	
 	public void setParticles(UList<Particle> particles)
 	{
 		this.particles = particles;
