@@ -1,0 +1,6 @@
+package com.ulticraft.command;
+
+public enum NodeFlag
+{
+	PLAYER_ONLY, CONSOLE_ONLY, POSITIVE_NUMBER_ONLY, NEGITIVE_NUMBER_ONLY, ONE_WORD_STRING, NON_ZERO_NUMBER
+}
