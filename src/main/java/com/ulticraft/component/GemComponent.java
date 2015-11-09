@@ -1,7 +1,9 @@
 package com.ulticraft.component;
 
 import org.bukkit.entity.Player;
+import com.ulticraft.Info;
 import com.ulticraft.Ulticraft;
+import com.ulticraft.composite.Notification;
 import com.ulticraft.uapi.Component;
 import com.ulticraft.uapi.Depend;
 
@@ -46,6 +48,8 @@ public class GemComponent extends Component
 		}
 		
 		set(p, get(p) + g);
+		
+		pl.getNotificationComponent().dispatchNotification(p, new Notification().setSubTitle(String.format(Info.MSG_GEMS_EARNED, String.valueOf(g))));
 	}
 	
 	public void take(Player p, int g)
@@ -56,5 +60,7 @@ public class GemComponent extends Component
 		}
 		
 		set(p, get(p) - g);
+		
+		pl.getNotificationComponent().dispatchNotification(p, new Notification().setSubTitle(String.format(Info.MSG_GEMS_SPENT, String.valueOf(g))));
 	}
 }
