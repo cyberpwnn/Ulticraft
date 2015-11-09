@@ -9,6 +9,7 @@ import com.ulticraft.component.AchievementComponent;
 import com.ulticraft.component.AuctionComponent;
 import com.ulticraft.component.DataComponent;
 import com.ulticraft.component.GemComponent;
+import com.ulticraft.component.GraphicsComponent;
 import com.ulticraft.component.ManaComponent;
 import com.ulticraft.component.NotificationComponent;
 import com.ulticraft.component.PerkComponent;
@@ -34,6 +35,7 @@ public class Ulticraft extends JavaPlugin
 	private ManaComponent manaComponent;
 	private PermissionComponent permissionComponent;
 	private AuctionComponent auctionComponent;
+	private GraphicsComponent graphicsComponent;
 	private Dispatcher dispatcher;
 	
 	public void onEnable()
@@ -43,6 +45,7 @@ public class Ulticraft extends JavaPlugin
 		
 		dataComponent = new DataComponent(this);
 		permissionComponent = new PermissionComponent(this);
+		graphicsComponent = new GraphicsComponent(this);
 		gemComponent = new GemComponent(this);
 		perkComponent = new PerkComponent(this);
 		achievementComponent = new AchievementComponent(this);
@@ -57,6 +60,7 @@ public class Ulticraft extends JavaPlugin
 		componentManager.register(permissionComponent);
 		componentManager.register(gemComponent);
 		componentManager.register(perkComponent);
+		componentManager.register(graphicsComponent);
 		componentManager.register(achievementComponent);
 		componentManager.register(spellComponent);
 		componentManager.register(notificationComponent);
@@ -123,6 +127,76 @@ public class Ulticraft extends JavaPlugin
 		return manaComponent;
 	}
 	
+	public void setComponentManager(ComponentManager componentManager)
+	{
+		this.componentManager = componentManager;
+	}
+
+	public void setDataComponent(DataComponent dataComponent)
+	{
+		this.dataComponent = dataComponent;
+	}
+
+	public void setGemComponent(GemComponent gemComponent)
+	{
+		this.gemComponent = gemComponent;
+	}
+
+	public void setPerkComponent(PerkComponent perkComponent)
+	{
+		this.perkComponent = perkComponent;
+	}
+
+	public void setAchievementComponent(AchievementComponent achievementComponent)
+	{
+		this.achievementComponent = achievementComponent;
+	}
+
+	public void setSpellComponent(SpellComponent spellComponent)
+	{
+		this.spellComponent = spellComponent;
+	}
+
+	public void setNotificationComponent(NotificationComponent notificationComponent)
+	{
+		this.notificationComponent = notificationComponent;
+	}
+
+	public void setSoundComponent(SoundComponent soundComponent)
+	{
+		this.soundComponent = soundComponent;
+	}
+
+	public void setSecurityComponent(SecurityComponent securityComponent)
+	{
+		this.securityComponent = securityComponent;
+	}
+
+	public void setManaComponent(ManaComponent manaComponent)
+	{
+		this.manaComponent = manaComponent;
+	}
+
+	public void setPermissionComponent(PermissionComponent permissionComponent)
+	{
+		this.permissionComponent = permissionComponent;
+	}
+
+	public void setAuctionComponent(AuctionComponent auctionComponent)
+	{
+		this.auctionComponent = auctionComponent;
+	}
+
+	public void setGraphicsComponent(GraphicsComponent graphicsComponent)
+	{
+		this.graphicsComponent = graphicsComponent;
+	}
+
+	public void setDispatcher(Dispatcher dispatcher)
+	{
+		this.dispatcher = dispatcher;
+	}
+
 	public AuctionComponent getAuctionComponent()
 	{
 		return auctionComponent;

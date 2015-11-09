@@ -3,12 +3,10 @@ package com.ulticraft.component;
 import org.bukkit.event.Listener;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.uapi.Component;
-import com.ulticraft.uapi.Depend;
 
-@Depend({GraphicsComponent.class, GemComponent.class})
-public class SpellComponent extends Component implements Listener
+public class GraphicsComponent extends Component implements Listener
 {
-	public SpellComponent(Ulticraft pl)
+	public GraphicsComponent(Ulticraft pl)
 	{
 		super(pl);
 	}
