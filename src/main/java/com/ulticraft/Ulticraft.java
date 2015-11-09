@@ -7,6 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.ulticraft.component.AchievementComponent;
 import com.ulticraft.component.AuctionComponent;
+import com.ulticraft.component.CommandComponent;
 import com.ulticraft.component.DataComponent;
 import com.ulticraft.component.GemComponent;
 import com.ulticraft.component.GraphicsComponent;
@@ -17,6 +18,7 @@ import com.ulticraft.component.PermissionComponent;
 import com.ulticraft.component.SecurityComponent;
 import com.ulticraft.component.SoundComponent;
 import com.ulticraft.component.SpellComponent;
+import com.ulticraft.component.UIComponent;
 import com.ulticraft.composite.Notification;
 import com.ulticraft.composite.PlayerData;
 import com.ulticraft.uapi.ComponentManager;
@@ -39,13 +41,14 @@ public class Ulticraft extends JavaPlugin
 	private PermissionComponent permissionComponent;
 	private AuctionComponent auctionComponent;
 	private GraphicsComponent graphicsComponent;
+	private UIComponent uiComponent;
+	private CommandComponent commandComponent;
 	private Dispatcher dispatcher;
 	
 	public void onEnable()
 	{
 		dispatcher = new Dispatcher(this);
 		componentManager = new ComponentManager(this);
-		
 		dataComponent = new DataComponent(this);
 		permissionComponent = new PermissionComponent(this);
 		graphicsComponent = new GraphicsComponent(this);
@@ -58,6 +61,8 @@ public class Ulticraft extends JavaPlugin
 		manaComponent = new ManaComponent(this);
 		securityComponent = new SecurityComponent(this);
 		auctionComponent = new AuctionComponent(this);
+		uiComponent = new UIComponent(this);
+		commandComponent = new CommandComponent(this);
 		
 		componentManager.register(dataComponent);
 		componentManager.register(permissionComponent);
@@ -71,6 +76,8 @@ public class Ulticraft extends JavaPlugin
 		componentManager.register(securityComponent);
 		componentManager.register(auctionComponent);
 		componentManager.register(manaComponent);
+		componentManager.register(uiComponent);
+		componentManager.register(commandComponent);
 		
 		componentManager.enable();
 		splash();
@@ -142,6 +149,21 @@ public class Ulticraft extends JavaPlugin
 	public PermissionComponent getPermissionComponent()
 	{
 		return permissionComponent;
+	}
+
+	public GraphicsComponent getGraphicsComponent()
+	{
+		return graphicsComponent;
+	}
+
+	public UIComponent getUiComponent()
+	{
+		return uiComponent;
+	}
+
+	public CommandComponent getCommandComponent()
+	{
+		return commandComponent;
 	}
 
 	public ManaComponent getManaComponent()
