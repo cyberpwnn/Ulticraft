@@ -1,9 +1,11 @@
 package com.ulticraft.component;
 
 import org.bukkit.entity.Player;
+import com.ulticraft.Info;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.uapi.Component;
 import com.ulticraft.uapi.Depend;
+import net.md_5.bungee.api.ChatColor;
 
 @Depend(DataComponent.class)
 public class ManaComponent extends Component
@@ -32,7 +34,7 @@ public class ManaComponent extends Component
 	
 	public void disable()
 	{
-		super.enable();
+		super.disable();
 	}
 	
 	public float getMana(Player p)
@@ -71,5 +73,29 @@ public class ManaComponent extends Component
 	public void regenMana(Player p)
 	{
 		setMana(p, getMana(p) + getManaRegen(p));
+	}
+	
+	public String getManaBar(Player p)
+	{
+		String bar = "" + ChatColor.LIGHT_PURPLE;
+		Float mana = getMana(p);
+		
+		if(mana != getManaMax(p))
+		{
+			if(mana < Info.MANA_BAR_SPLIT)
+			{
+				bar = bar + Info.DINGBAT_HEXAGON;
+				return bar + "  ";
+			}
+			
+			int split = ((int) (mana / Info.MANA_BAR_SPLIT) * 2) + 1;
+			
+			for(int i = 0; i < split; i++)
+			{
+				bar = bar + Info.DINGBAT_HEXAGON;
+			}
+		}
+		
+		return bar + "  ";
 	}
 }

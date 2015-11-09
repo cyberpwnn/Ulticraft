@@ -13,6 +13,8 @@ public class Info
 	public static final String STAT_MAGICFLAMES = "Magic Flames";
 	public static final String STAT_MAGICRUSHES = "Magic Rushes";
 	
-	public static final char DINGBAT_HEX_EMPTY = '\u2B21';
-	public static final char DINGBAT_HEX_HEAVY = '\u2B22';
+	public static final char DINGBAT_PENTAGON = '\u2B1F';
+	public static final char DINGBAT_HEXAGON = '\u2B22';
+	
+	public static final int MANA_BAR_SPLIT = 20;
 }

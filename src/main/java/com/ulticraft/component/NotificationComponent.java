@@ -6,7 +6,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
-import com.ulticraft.Info;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.composite.Notification;
 import com.ulticraft.uapi.Component;
@@ -15,7 +14,6 @@ import com.ulticraft.uapi.NotificationPriority;
 import com.ulticraft.uapi.Title;
 import com.ulticraft.uapi.UList;
 import com.ulticraft.uapi.UMap;
-import net.md_5.bungee.api.ChatColor;
 
 @Depend({ManaComponent.class, SoundComponent.class})
 public class NotificationComponent extends Component implements Listener
@@ -107,28 +105,7 @@ public class NotificationComponent extends Component implements Listener
 	
 	public void displayOngoing(Player p)
 	{
-		float mana = pl.getManaComponent().getMana(p);
-		
-		if(mana == pl.getManaComponent().getManaMax(p))
-		{
-			return;
-		}
-		
-		int fh = (int) mana / 20;
-		
-		if(fh % 2 == 0 && fh != 0)
-		{
-			fh++;
-		}
-		
-		String s = "" + ChatColor.LIGHT_PURPLE;
-		
-		for(int i = 0; i < fh; i++)
-		{
-			s = s + Info.DINGBAT_HEX_HEAVY;
-		}
-		
-		new Title(" ", " ", s).send(p);
+		new Title(" ", " ", pl.getManaComponent().getManaBar(p)).send(p);
 	}
 	
 	public void dispatchNotification(Player p, Notification n)
