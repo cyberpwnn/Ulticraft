@@ -31,6 +31,11 @@ public class Info
 	public static final char DINGBAT_PENTAGON = '\u2B1F';
 	public static final char DINGBAT_HEXAGON = '\u2B22';
 	
+	public static final String MSG_NO_PERMISSION = ChatColor.RED + "Insufficient Permissions";
+	public static final String MSG_INVALID_INPUT = ChatColor.RED + "Invalid input '%s' for type %s";
+	public static final String MSG_PLAYER_ONLY = ChatColor.RED + "Error: Player Only Command";
+	public static final String MSG_CONSOLE_ONLY = ChatColor.RED + "Error: Console Only Command";
+	
 	public static final String MSG_GEMS_SPENT = ChatColor.DARK_GRAY + "Spent " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_GEMS_EARNED = ChatColor.DARK_GRAY + "Earned " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_PERK_UNLOCK = ChatColor.DARK_GRAY + "Unlocked " + ChatColor.LIGHT_PURPLE + "%s";
