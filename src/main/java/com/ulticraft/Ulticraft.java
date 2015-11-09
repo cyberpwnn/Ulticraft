@@ -17,9 +17,12 @@ import com.ulticraft.component.PermissionComponent;
 import com.ulticraft.component.SecurityComponent;
 import com.ulticraft.component.SoundComponent;
 import com.ulticraft.component.SpellComponent;
+import com.ulticraft.composite.Notification;
 import com.ulticraft.composite.PlayerData;
 import com.ulticraft.uapi.ComponentManager;
 import com.ulticraft.uapi.Dispatcher;
+import com.ulticraft.uapi.NotificationPriority;
+import net.md_5.bungee.api.ChatColor;
 
 public class Ulticraft extends JavaPlugin
 {
@@ -70,6 +73,30 @@ public class Ulticraft extends JavaPlugin
 		componentManager.register(manaComponent);
 		
 		componentManager.enable();
+		splash();
+	}
+	
+	public void onDisable()
+	{
+		for(Player i : onlinePlayers())
+		{
+			i.closeInventory();
+		}
+		
+		securityComponent.splashStart();
+		componentManager.disable();
+	}
+	
+	public void splash()
+	{
+		securityComponent.splashStop();
+		notificationComponent.broadcast(new Notification().setSubTitle(Info.MSG_UPGRADED).setPriority(NotificationPriority.HIGH));
+		notificationComponent.broadcast(new Notification().setSubSubTitle(Info.MSG_DEVELOPED_BY).setPriority(NotificationPriority.LOW));
+		
+		for(String i : Info.AUTHORS)
+		{
+			notificationComponent.broadcast(new Notification().setSubSubTitle(ChatColor.LIGHT_PURPLE + i).setPriority(NotificationPriority.LOW));
+		}
 	}
 	
 	public int scheduleSyncRepeatingTask(int delay, int interval, Runnable runnable)
@@ -90,11 +117,6 @@ public class Ulticraft extends JavaPlugin
 	public Collection<? extends Player> onlinePlayers()
 	{
 		return getServer().getOnlinePlayers();
-	}
-	
-	public void onDisable()
-	{
-		componentManager.disable();
 	}
 	
 	public void register(Listener listener)
