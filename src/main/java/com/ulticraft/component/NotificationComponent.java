@@ -127,6 +127,14 @@ public class NotificationComponent extends Component implements Listener
 		}
 	}
 	
+	public void broadcast(Notification n)
+	{
+		for(Player i : pl.onlinePlayers())
+		{
+			dispatch(i, n);
+		}
+	}
+	
 	@EventHandler
 	public void onPlayer(PlayerQuitEvent e)
 	{
