@@ -49,7 +49,7 @@ public class GemComponent extends Component
 		
 		set(p, get(p) + g);
 		
-		pl.getNotificationComponent().dispatchNotification(p, new Notification().setSubTitle(String.format(Info.MSG_GEMS_EARNED, String.valueOf(g))));
+		pl.getNotificationComponent().dispatch(p, new Notification().setSubTitle(String.format(Info.MSG_GEMS_EARNED, String.valueOf(g))));
 	}
 	
 	public void take(Player p, int g)
@@ -61,6 +61,6 @@ public class GemComponent extends Component
 		
 		set(p, get(p) - g);
 		
-		pl.getNotificationComponent().dispatchNotification(p, new Notification().setSubTitle(String.format(Info.MSG_GEMS_SPENT, String.valueOf(g))));
+		pl.getNotificationComponent().dispatch(p, new Notification().setSubTitle(String.format(Info.MSG_GEMS_SPENT, String.valueOf(g))));
 	}
 }

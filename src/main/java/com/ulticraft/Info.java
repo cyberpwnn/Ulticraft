@@ -1,6 +1,7 @@
 package com.ulticraft;
 
 import com.ulticraft.composite.Perk;
+import com.ulticraft.uapi.USound;
 import net.md_5.bungee.api.ChatColor;
 
 public class Info
@@ -25,6 +26,12 @@ public class Info
 	
 	public static final String MSG_GEMS_SPENT = ChatColor.DARK_GRAY + "Spent " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_GEMS_EARNED = ChatColor.DARK_GRAY + "Earned " + ChatColor.LIGHT_PURPLE + "%s Gems";
+	public static final String MSG_PERK_UNLOCK = ChatColor.DARK_GRAY + "Unlocked " + ChatColor.LIGHT_PURPLE + "%s";
+	
+	public static final String BROAD_PERK_UNLOCK = ChatColor.LIGHT_PURPLE + "%s " + ChatColor.DARK_GRAY + "Unlocked " + ChatColor.LIGHT_PURPLE + "%s";
+	
+	public static final USound SOUND_PERK_UNLOCK = new USound("ulticraft.unlock.perk");
+	public static final USound SOUND_PERK_UNLOCK_DISTANT = new USound("ulticraft.unlock.perk.distant");
 	
 	public static final int MANA_BAR_SPLIT = 20;
 	
