@@ -19,6 +19,6 @@ public class PerkComponent extends Component
 	
 	public void disable()
 	{
-		super.enable();
+		super.disable();
 	}
 }

@@ -14,6 +14,7 @@ public class SecurityComponent extends Component
 	public SecurityComponent(Ulticraft pl)
 	{
 		super(pl);
+		this.checks = new UMap<Player, UMap<String, Integer>>();
 	}
 	
 	public void enable()
@@ -24,5 +25,15 @@ public class SecurityComponent extends Component
 	public void disable()
 	{
 		super.disable();
+	}
+
+	public UMap<Player, UMap<String, Integer>> getChecks()
+	{
+		return checks;
+	}
+
+	public void setChecks(UMap<Player, UMap<String, Integer>> checks)
+	{
+		this.checks = checks;
 	}
 }

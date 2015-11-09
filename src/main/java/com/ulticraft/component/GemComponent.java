@@ -19,6 +19,6 @@ public class GemComponent extends Component
 	
 	public void disable()
 	{
-		super.enable();
+		super.disable();
 	}
 }
