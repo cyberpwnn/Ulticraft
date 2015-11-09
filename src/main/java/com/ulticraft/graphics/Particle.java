@@ -1,4 +1,4 @@
-package com.ulticraft.composite;
+package com.ulticraft.graphics;
 
 import org.bukkit.Location;
 import org.bukkit.util.Vector;

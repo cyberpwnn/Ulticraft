@@ -1,6 +1,7 @@
-package com.ulticraft.composite;
+package com.ulticraft.graphics;
 
 import org.bukkit.Location;
+import org.bukkit.util.Vector;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.uapi.UList;
 import com.ulticraft.uapi.VectorFilter;
@@ -48,6 +49,30 @@ public class ParticleSystem
 				}
 			}
 		});
+	}
+	
+	public void addLine(Location a, Location b, int segments)
+	{
+		Vector link = b.toVector().subtract(a.toVector());
+		UList<Location> locations = new UList<Location>();
+		Float length = (float) link.length();
+		Integer step = 0;
+		Float ratio = length / segments;
+		Vector v = link.multiply(ratio);
+		Location loc = a.clone().subtract(v);
+		
+		for(int i = 0; i < segments; i++)
+		{
+			if(step >= segments)
+			{
+				step = 0;
+			}
+			
+			step++;
+			loc.add(v);
+			
+			locations.add(loc.clone());
+		}
 	}
 	
 	public void applyFilter(VectorFilter filter)
