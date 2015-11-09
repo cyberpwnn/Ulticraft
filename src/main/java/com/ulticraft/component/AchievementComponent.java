@@ -131,8 +131,8 @@ public class AchievementComponent extends Component implements Listener
 	public void onPlayer(PlayerChatEvent e)
 	{
 		PlayerData pd = pl.gpd(e.getPlayer());
-		check(e.getPlayer(), Info.STAT_CHATWORDS, pd.getChatWords(), StringUtils.split(" ").length);
-		pd.setChatWords(pd.getChatWords() + 1);
+		check(e.getPlayer(), Info.STAT_CHATWORDS, pd.getChatWords(), StringUtils.split(e.getMessage(), " ").length);
+		pd.setChatWords(pd.getChatWords() + StringUtils.split(e.getMessage(), " ").length);
 	}
 	
 	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
