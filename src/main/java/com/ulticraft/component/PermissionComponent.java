@@ -1,13 +1,11 @@
 package com.ulticraft.component;
 
 import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.uapi.Component;
@@ -15,7 +13,6 @@ import com.ulticraft.uapi.Depend;
 import com.ulticraft.uapi.UList;
 import net.milkbowl.vault.permission.Permission;
 
-@SuppressWarnings("deprecation")
 @Depend(DataComponent.class)
 public class PermissionComponent extends Component implements Listener
 {
@@ -108,11 +105,5 @@ public class PermissionComponent extends Component implements Listener
 			testEvent = false;
 			e.setCancelled(true);
 		}
-	}
-	
-	@EventHandler(priority = EventPriority.MONITOR)
-	public void onTest(PlayerChatEvent e)
-	{
-		e.setMessage("Value is " + canBreak(e.getPlayer(), e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN)));
 	}
 }
