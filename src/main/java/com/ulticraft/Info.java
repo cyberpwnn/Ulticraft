@@ -30,8 +30,8 @@ public class Info
 	
 	public static final String BROAD_PERK_UNLOCK = ChatColor.LIGHT_PURPLE + "%s " + ChatColor.DARK_GRAY + "Unlocked " + ChatColor.LIGHT_PURPLE + "%s";
 	
-	public static final USound SOUND_PERK_UNLOCK = new USound("ulticraft.unlock.perk");
-	public static final USound SOUND_PERK_UNLOCK_DISTANT = new USound("ulticraft.unlock.perk.distant");
+	public static final USound SOUND_PERK_UNLOCK = new USound("ulticraft.event.unlock");
+	public static final USound SOUND_PERK_UNLOCK_DISTANT = new USound("ulticraft.distantevent.unlock");
 	
 	public static final int MANA_BAR_SPLIT = 20;
 	
