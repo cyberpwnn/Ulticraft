@@ -12,6 +12,7 @@ import com.ulticraft.component.GemComponent;
 import com.ulticraft.component.ManaComponent;
 import com.ulticraft.component.NotificationComponent;
 import com.ulticraft.component.PerkComponent;
+import com.ulticraft.component.PermissionComponent;
 import com.ulticraft.component.SecurityComponent;
 import com.ulticraft.component.SoundComponent;
 import com.ulticraft.component.SpellComponent;
@@ -31,6 +32,7 @@ public class Ulticraft extends JavaPlugin
 	private SoundComponent soundComponent;
 	private SecurityComponent securityComponent;
 	private ManaComponent manaComponent;
+	private PermissionComponent permissionComponent;
 	private AuctionComponent auctionComponent;
 	private Dispatcher dispatcher;
 	
@@ -40,6 +42,7 @@ public class Ulticraft extends JavaPlugin
 		componentManager = new ComponentManager(this);
 		
 		dataComponent = new DataComponent(this);
+		permissionComponent = new PermissionComponent(this);
 		gemComponent = new GemComponent(this);
 		perkComponent = new PerkComponent(this);
 		achievementComponent = new AchievementComponent(this);
@@ -51,6 +54,7 @@ public class Ulticraft extends JavaPlugin
 		auctionComponent = new AuctionComponent(this);
 		
 		componentManager.register(dataComponent);
+		componentManager.register(permissionComponent);
 		componentManager.register(gemComponent);
 		componentManager.register(perkComponent);
 		componentManager.register(achievementComponent);
@@ -109,6 +113,11 @@ public class Ulticraft extends JavaPlugin
 		return componentManager;
 	}
 	
+	public PermissionComponent getPermissionComponent()
+	{
+		return permissionComponent;
+	}
+
 	public ManaComponent getManaComponent()
 	{
 		return manaComponent;
