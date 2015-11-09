@@ -108,12 +108,23 @@ public class NotificationComponent extends Component implements Listener
 		new Title(" ", " ", pl.getManaComponent().getBar(p)).send(p);
 	}
 	
-	public void dispatchNotification(Player p, Notification n)
+	public void dispatch(Player p, Notification n)
 	{
 		UList<Notification> ns = queue.get(p) == null ? new UList<Notification>() : queue.get(p);
 		ns.add(n);
 		
 		queue.put(p, ns);
+	}
+	
+	public void broadcast(Player delim, Notification n)
+	{
+		for(Player i : pl.onlinePlayers())
+		{
+			if(!i.getUniqueId().equals(delim.getUniqueId()))
+			{
+				dispatch(i, n);
+			}
+		}
 	}
 	
 	@EventHandler
