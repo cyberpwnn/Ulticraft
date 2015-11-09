@@ -1,4 +1,4 @@
-package com.ulticraft.uapi;
+package com.ulticraft.graphics;
 
 import org.bukkit.util.Vector;
 

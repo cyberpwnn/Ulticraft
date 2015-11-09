@@ -3,7 +3,6 @@ package com.ulticraft.graphics;
 import org.bukkit.Location;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.uapi.UList;
-import com.ulticraft.uapi.VectorFilter;
 
 public class ParticleSystem
 {

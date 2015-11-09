@@ -2,7 +2,6 @@ package com.ulticraft.graphics;
 
 import java.util.Random;
 import org.bukkit.util.Vector;
-import com.ulticraft.uapi.VectorFilter;
 
 public class RandomVectorFilter implements VectorFilter
 {
