@@ -122,7 +122,7 @@ public class PerkComponent extends Component
 		pl.getPermissionComponent().give(p, k.getPermissions());
 		pl.gpd(p).setPerks(new UList<String>(pl.gpd(p).getPerks()).qadd(k.getCodeName()).toString(","));
 		pl.getNotificationComponent().dispatch(p, new Notification().setSubTitle(String.format(Info.MSG_PERK_UNLOCK, k.getName())).setSound(Info.SOUND_PERK_UNLOCK).setPriority(NotificationPriority.HIGH));
-		pl.getNotificationComponent().broadcast(p, new Notification().setSubSubTitle(String.format(Info.BROAD_PERK_UNLOCK, p.getName(), k.getName())));
+		pl.getNotificationComponent().broadcast(p, new Notification().setSubSubTitle(String.format(Info.BROAD_PERK_UNLOCK, p.getName(), k.getName())).setSound(Info.SOUND_PERK_UNLOCK_DISTANT).setPriority(NotificationPriority.LOW));
 		pl.getGemComponent().take(p, k.getCost());
 	}
 }
