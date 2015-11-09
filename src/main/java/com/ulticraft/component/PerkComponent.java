@@ -51,7 +51,7 @@ public class PerkComponent extends Component
 		
 		for(Perk i : perks)
 		{
-			if(i.getName().toLowerCase().equals(k.toLowerCase()))
+			if(i.getName().equalsIgnoreCase(k.toLowerCase()))
 			{
 				return i;
 			}

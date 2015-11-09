@@ -334,16 +334,11 @@ public class Reflector
 				
 				return m;
 			}
-			
-			else
-			{
-			
-			}
 		}
 		
 		catch(Exception e)
 		{
-		
+			
 		}
 		
 		return null;
@@ -368,7 +363,7 @@ public class Reflector
 		
 		catch(Exception e)
 		{
-		
+			w(e.getMessage());
 		}
 		
 		return null;
