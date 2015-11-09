@@ -64,9 +64,9 @@ public class AchievementComponent extends Component implements Listener
 		
 		if(getLevel(at) != getLevel(at + 1))
 		{
-			pl.getNotificationComponent().dispatch(p, new Notification().setSubTitle(String.format(Info.MSG_ACHIEVEMENT, p.getName(), Info.ACHIEVEMENT_PATH_TITLES[getLevel(at + 1)], stat)).setSound(Info.SOUND_ACHIEVE));
-			pl.getGemComponent().give(p, getReward(getLevel(at + 1)));
-			pl.getNotificationComponent().broadcast(p, new Notification().setSubTitle(String.format(Info.BROAD_ACHIEVEMENT, p.getName(), Info.ACHIEVEMENT_PATH_TITLES[getLevel(at + 1)], stat)).setSound(Info.SOUND_ACHIEVE_DISTANT));
+			pl.getNotificationComponent().dispatch(p, new Notification().setSubTitle(String.format(Info.MSG_ACHIEVEMENT, Info.ACHIEVEMENT_PATH_TITLES[getLevel(at)], stat)).setSound(Info.SOUND_ACHIEVE));
+			pl.getGemComponent().give(p, getReward(getLevel(at)));
+			pl.getNotificationComponent().broadcast(p, new Notification().setSubTitle(String.format(Info.BROAD_ACHIEVEMENT, p.getName(), Info.ACHIEVEMENT_PATH_TITLES[getLevel(at)], stat)).setSound(Info.SOUND_ACHIEVE_DISTANT));
 		}
 	}
 	
