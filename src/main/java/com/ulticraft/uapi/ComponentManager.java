@@ -38,7 +38,7 @@ public class ComponentManager
 	{
 		pl.v("Disabling Components");
 		
-		for(int i = order.size()-1; i >= 0; i--)
+		for(int i = order.size() - 1; i >= 0; i--)
 		{
 			disable(order.get(i));
 		}
@@ -86,7 +86,7 @@ public class ComponentManager
 					pl.v("Component " + StringUtils.remove(c.getClass().getSimpleName(), "Component") + " Enabled");
 				}
 				
-				catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
+				catch(IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
 				{
 					return;
 				}
@@ -100,21 +100,18 @@ public class ComponentManager
 		{
 			Method disable = getDeclaredMethod(c, "disable");
 			
-			if(components.get(c))
+			if(components.get(c) && disable != null)
 			{
-				if(disable != null)
+				try
 				{
-					try
-					{
-						disable.invoke(c);
-						components.put(c, false);
-						pl.v("Component " + StringUtils.remove(c.getClass().getSimpleName(), "Component") + " Disabled");
-					}
-					
-					catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
-					{
-						return;
-					}
+					disable.invoke(c);
+					components.put(c, false);
+					pl.v("Component " + StringUtils.remove(c.getClass().getSimpleName(), "Component") + " Disabled");
+				}
+				
+				catch(IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
+				{
+					return;
 				}
 			}
 		}
@@ -145,7 +142,7 @@ public class ComponentManager
 			return o.getClass().getDeclaredMethod(mn);
 		}
 		
-		catch (NoSuchMethodException | SecurityException e)
+		catch(NoSuchMethodException | SecurityException e)
 		{
 			return null;
 		}

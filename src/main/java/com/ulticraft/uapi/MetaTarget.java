@@ -27,7 +27,7 @@ public class MetaTarget
 		String s = path.getPath();
 		
 		s = StringUtils.replace(s, File.separator, ".");
-		return s.substring(0, 1) == "." ? s.substring(1) : s;
+		return s.substring(0, 1).equals(".") ? s.substring(1) : s;
 	}
 	
 	public MetaTarget getParent()

@@ -30,7 +30,10 @@ public class Notification
 			p.sendMessage(i);
 		}
 		
-		sound.play(p);
+		if(sound != null)
+		{
+			sound.play(p);
+		}
 	}
 	
 	public Notification addMessage(String message)

@@ -144,14 +144,9 @@ public class DataComponent extends Component implements Listener
 	
 	public void quit(Player player)
 	{
-		if(save(player))
+		if(!save(player))
 		{
-			//saved
-		}
-		
-		else
-		{
-			//failed
+			pl.f("FAILED TO SAVE PLAYER! " + player.getUniqueId().toString());
 		}
 	}
 	

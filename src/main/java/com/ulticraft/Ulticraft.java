@@ -6,17 +6,23 @@ import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import com.ulticraft.component.AchievementComponent;
+import com.ulticraft.component.AuctionComponent;
 import com.ulticraft.component.DataComponent;
 import com.ulticraft.component.GemComponent;
+import com.ulticraft.component.GraphicsComponent;
 import com.ulticraft.component.ManaComponent;
 import com.ulticraft.component.NotificationComponent;
 import com.ulticraft.component.PerkComponent;
+import com.ulticraft.component.PermissionComponent;
 import com.ulticraft.component.SecurityComponent;
 import com.ulticraft.component.SoundComponent;
 import com.ulticraft.component.SpellComponent;
+import com.ulticraft.composite.Notification;
 import com.ulticraft.composite.PlayerData;
 import com.ulticraft.uapi.ComponentManager;
 import com.ulticraft.uapi.Dispatcher;
+import com.ulticraft.uapi.NotificationPriority;
+import net.md_5.bungee.api.ChatColor;
 
 public class Ulticraft extends JavaPlugin
 {
@@ -30,6 +36,9 @@ public class Ulticraft extends JavaPlugin
 	private SoundComponent soundComponent;
 	private SecurityComponent securityComponent;
 	private ManaComponent manaComponent;
+	private PermissionComponent permissionComponent;
+	private AuctionComponent auctionComponent;
+	private GraphicsComponent graphicsComponent;
 	private Dispatcher dispatcher;
 	
 	public void onEnable()
@@ -38,6 +47,8 @@ public class Ulticraft extends JavaPlugin
 		componentManager = new ComponentManager(this);
 		
 		dataComponent = new DataComponent(this);
+		permissionComponent = new PermissionComponent(this);
+		graphicsComponent = new GraphicsComponent(this);
 		gemComponent = new GemComponent(this);
 		perkComponent = new PerkComponent(this);
 		achievementComponent = new AchievementComponent(this);
@@ -46,18 +57,46 @@ public class Ulticraft extends JavaPlugin
 		soundComponent = new SoundComponent(this);
 		manaComponent = new ManaComponent(this);
 		securityComponent = new SecurityComponent(this);
+		auctionComponent = new AuctionComponent(this);
 		
 		componentManager.register(dataComponent);
+		componentManager.register(permissionComponent);
 		componentManager.register(gemComponent);
 		componentManager.register(perkComponent);
+		componentManager.register(graphicsComponent);
 		componentManager.register(achievementComponent);
 		componentManager.register(spellComponent);
 		componentManager.register(notificationComponent);
 		componentManager.register(soundComponent);
 		componentManager.register(securityComponent);
+		componentManager.register(auctionComponent);
 		componentManager.register(manaComponent);
 		
 		componentManager.enable();
+		splash();
+	}
+	
+	public void onDisable()
+	{
+		for(Player i : onlinePlayers())
+		{
+			i.closeInventory();
+		}
+		
+		securityComponent.splashStart();
+		componentManager.disable();
+	}
+	
+	public void splash()
+	{
+		securityComponent.splashStop();
+		notificationComponent.broadcast(new Notification().setSubTitle(Info.MSG_UPGRADED).setPriority(NotificationPriority.HIGH));
+		notificationComponent.broadcast(new Notification().setSubSubTitle(Info.MSG_DEVELOPED_BY).setPriority(NotificationPriority.LOW));
+		
+		for(String i : Info.AUTHORS)
+		{
+			notificationComponent.broadcast(new Notification().setSubSubTitle(ChatColor.LIGHT_PURPLE + i).setPriority(NotificationPriority.LOW));
+		}
 	}
 	
 	public int scheduleSyncRepeatingTask(int delay, int interval, Runnable runnable)
@@ -80,11 +119,6 @@ public class Ulticraft extends JavaPlugin
 		return getServer().getOnlinePlayers();
 	}
 	
-	public void onDisable()
-	{
-		componentManager.disable();
-	}
-	
 	public void register(Listener listener)
 	{
 		getServer().getPluginManager().registerEvents(listener, this);
@@ -105,9 +139,89 @@ public class Ulticraft extends JavaPlugin
 		return componentManager;
 	}
 	
+	public PermissionComponent getPermissionComponent()
+	{
+		return permissionComponent;
+	}
+
 	public ManaComponent getManaComponent()
 	{
 		return manaComponent;
+	}
+	
+	public void setComponentManager(ComponentManager componentManager)
+	{
+		this.componentManager = componentManager;
+	}
+
+	public void setDataComponent(DataComponent dataComponent)
+	{
+		this.dataComponent = dataComponent;
+	}
+
+	public void setGemComponent(GemComponent gemComponent)
+	{
+		this.gemComponent = gemComponent;
+	}
+
+	public void setPerkComponent(PerkComponent perkComponent)
+	{
+		this.perkComponent = perkComponent;
+	}
+
+	public void setAchievementComponent(AchievementComponent achievementComponent)
+	{
+		this.achievementComponent = achievementComponent;
+	}
+
+	public void setSpellComponent(SpellComponent spellComponent)
+	{
+		this.spellComponent = spellComponent;
+	}
+
+	public void setNotificationComponent(NotificationComponent notificationComponent)
+	{
+		this.notificationComponent = notificationComponent;
+	}
+
+	public void setSoundComponent(SoundComponent soundComponent)
+	{
+		this.soundComponent = soundComponent;
+	}
+
+	public void setSecurityComponent(SecurityComponent securityComponent)
+	{
+		this.securityComponent = securityComponent;
+	}
+
+	public void setManaComponent(ManaComponent manaComponent)
+	{
+		this.manaComponent = manaComponent;
+	}
+
+	public void setPermissionComponent(PermissionComponent permissionComponent)
+	{
+		this.permissionComponent = permissionComponent;
+	}
+
+	public void setAuctionComponent(AuctionComponent auctionComponent)
+	{
+		this.auctionComponent = auctionComponent;
+	}
+
+	public void setGraphicsComponent(GraphicsComponent graphicsComponent)
+	{
+		this.graphicsComponent = graphicsComponent;
+	}
+
+	public void setDispatcher(Dispatcher dispatcher)
+	{
+		this.dispatcher = dispatcher;
+	}
+
+	public AuctionComponent getAuctionComponent()
+	{
+		return auctionComponent;
 	}
 	
 	public AchievementComponent getAchievementComponent()
