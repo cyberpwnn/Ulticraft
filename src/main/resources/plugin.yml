@@ -5,3 +5,11 @@ depend: [Vault]
 commands:
   gem:
     aliases: [gems]
+  perk:
+    aliases: [perks]
+  spell:
+    aliases: [spells]
+  mana:
+    aliases: [magic]
+  ulticraft:
+    aliases: [u]
