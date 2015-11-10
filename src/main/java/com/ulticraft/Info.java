@@ -30,6 +30,9 @@ public class Info
 	
 	public static final char DINGBAT_PENTAGON = '\u2B1F';
 	public static final char DINGBAT_HEXAGON = '\u2B22';
+	public static final char DINGBAT_CHECK = '\u2B22';
+	public static final char DINGBAT_NOTCHECK = '\u2B22';
+	public static final char DINGBAT_BACK = '\u2B22';
 	
 	public static final String MSG_NO_PERMISSION = ChatColor.RED + "Insufficient Permissions";
 	public static final String MSG_INVALID_INPUT = ChatColor.RED + "Invalid input '%s' for type %s";
@@ -50,6 +53,8 @@ public class Info
 	public static final USound SOUND_PERK_UNLOCK_DISTANT = new USound("ulticraft.distantevent.unlock");
 	public static final USound SOUND_ACHIEVE = new USound("ulticraft.event.achieve");
 	public static final USound SOUND_ACHIEVE_DISTANT = new USound("ulticraft.distantevent.achieve");
+	public static final USound SOUND_GUI_CONFIRM = new USound("ulticraft.event.gui.confirm");
+	public static final USound SOUND_GUI_EXIT = new USound("ulticraft.event.gui.exit");
 	
 	public static final int MANA_BAR_SPLIT = 20;
 	
