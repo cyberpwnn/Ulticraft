@@ -291,6 +291,32 @@ public class Ulticraft extends JavaPlugin
 		return dispatcher;
 	}
 	
+	public boolean canFindPlayer(String search)
+	{
+		return findPlayer(search) == null ? false : true;
+	}
+	
+	public Player findPlayer(String search)
+	{
+		for(Player i : onlinePlayers())
+		{
+			if(i.getName().equalsIgnoreCase(search))
+			{
+				return i;
+			}
+		}
+		
+		for(Player i : onlinePlayers())
+		{
+			if(i.getName().toLowerCase().contains(search.toLowerCase()))
+			{
+				return i;
+			}
+		}
+		
+		return null;
+	}
+	
 	public void i(String... o)
 	{
 		dispatcher.info(o);
