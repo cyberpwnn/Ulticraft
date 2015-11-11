@@ -8,6 +8,7 @@ public class UIElement
 	private String name;
 	private Material material;
 	private UList<String> description;
+	private Runnable runnable;
 	
 	public UIElement(String name, Material material)
 	{
@@ -54,5 +55,15 @@ public class UIElement
 	public void setDescription(UList<String> description)
 	{
 		this.description = description;
+	}
+
+	public Runnable getRunnable()
+	{
+		return runnable;
+	}
+
+	public void setRunnable(Runnable runnable)
+	{
+		this.runnable = runnable;
 	}
 }
