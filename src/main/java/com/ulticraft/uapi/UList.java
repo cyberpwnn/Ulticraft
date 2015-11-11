@@ -148,6 +148,29 @@ public class UList<T> extends ArrayList<T>
 		}
 	}
 	
+	public void addFirst(T t)
+	{
+		UList<T> m = new UList<T>();
+		m.add(t);
+		m.add(copy());
+		
+		clear();
+		
+		add(m.copy());
+	}
+	
+	public UList<T> qaddFirst(T t)
+	{
+		UList<T> m = new UList<T>();
+		m.add(t);
+		m.add(copy());
+		
+		clear();
+		
+		add(m.copy());
+		return this;
+	}
+	
 	public UList<T> qadd(T t)
 	{
 		this.add(t);

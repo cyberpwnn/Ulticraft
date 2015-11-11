@@ -2,11 +2,12 @@ package com.ulticraft.command;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import com.ulticraft.uapi.UList;
 
 public class RunnableNode implements Runnable
 {
 	private CommandSender sender;
-	private Object data;
+	private UList<NodeParam> data;
 	
 	public CommandSender getSender()
 	{
@@ -18,12 +19,12 @@ public class RunnableNode implements Runnable
 		this.sender = sender;
 	}
 	
-	public Object getData()
+	public UList<NodeParam> getData()
 	{
 		return data;
 	}
 
-	public void setData(Object data)
+	public void setData(UList<NodeParam> data)
 	{
 		this.data = data;
 	}
@@ -38,7 +39,7 @@ public class RunnableNode implements Runnable
 		return (Player) sender;
 	}
 	
-	public void run(CommandSender sender, Object data)
+	public void run(CommandSender sender, UList<NodeParam> data)
 	{
 		setSender(sender);
 		setData(data);

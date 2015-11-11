@@ -1,6 +1,5 @@
 package com.ulticraft.command;
 
-import java.util.UUID;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,48 +14,27 @@ public class Commander implements CommandExecutor
 		this.nodes = new UList<Node>();
 	}
 	
-	public Node resolveRootNode(String n)
+	public boolean resolveNode(CommandSender sender, UList<String> argx)
 	{
-		for(Node i : nodes)
+		Node possibleNode = null;
+		
+		for(Node n : nodes)
 		{
-			if(i.getParent() == null && n.equalsIgnoreCase(i.getName()))
+			for(int i = 0; i < argx.size(); i++)
 			{
-				return i;
-			}
-		}
-		
-		return null;
-	}
-	
-	public void resolveNode(CommandSender sender, Node node, UList<String> argx)
-	{
-		if(argx.size() == 1)
-		{
-			node.execute(sender, argx.get(0));
-			return;
-		}
-		
-		if(argx.size() == 0)
-		{
-			node.execute(sender, null);
-			return;
-		}
-		
-		else
-		{
-			for(UUID i : node.getChildren())
-			{
-				for(Node j : nodes)
+				if(n.getParams().hasIndex(i) && argx.get(i).equalsIgnoreCase(n.getParams().get(i).getName()))
 				{
-					if(j.getUuid().equals(i) && j.getName().equalsIgnoreCase(argx.get(0)))
-					{
-						argx.remove(0);
-						resolveNode(sender, j, argx);
-						return;
-					}
+					possibleNode = n;
 				}
 			}
 		}
+		
+		if(possibleNode != null)
+		{
+			
+		}
+		
+		return false;
 	}
 
 	public UList<Node> getNodes()
@@ -72,13 +50,6 @@ public class Commander implements CommandExecutor
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args)
 	{
-		Node n = resolveRootNode(command.getName());
-		
-		if(n != null)
-		{
-			resolveNode(sender, n, new UList<String>(args));
-		}
-		
-		return false;
+		return resolveNode(sender, new UList<String>(args).qaddFirst(command.getName().toLowerCase()));
 	}
 }

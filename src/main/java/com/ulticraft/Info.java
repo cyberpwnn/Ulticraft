@@ -22,6 +22,10 @@ public class Info
 	public static final String STAT_MAGICFLAMES = "Magic Flames";
 	public static final String STAT_MAGICRUSHES = "Magic Rushes";
 	
+	public static final String PERM_GEM_GIVE = "ulticraft.gems.give";
+	public static final String PERM_GEM_TAKE = "ulticraft.gems.take";
+	public static final String PERM_GEM_GET = "ulticraft.gems.get";
+	
 	public static final String ERR_NO_PERK_HAS_PERMS = "ERROR: #200";
 	public static final String ERR_NO_PERMS_HAS_PERK = "ERROR: #201";
 	
@@ -40,6 +44,7 @@ public class Info
 	public static final String MSG_PLAYER_ONLY = ChatColor.RED + "Error: Player Only Command";
 	public static final String MSG_CONSOLE_ONLY = ChatColor.RED + "Error: Console Only Command";
 	
+	public static final String MSG_GEMS_HAVE = ChatColor.DARK_GRAY + "You have " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_GEMS_SPENT = ChatColor.DARK_GRAY + "Spent " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_GEMS_EARNED = ChatColor.DARK_GRAY + "Earned " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_PERK_UNLOCK = ChatColor.DARK_GRAY + "Unlocked " + ChatColor.LIGHT_PURPLE + "%s";
