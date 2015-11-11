@@ -79,7 +79,9 @@ public class Ulticraft extends JavaPlugin
 		componentManager.register(uiComponent);
 		componentManager.register(commandComponent);
 		
+		//Enable component manager
 		componentManager.enable();
+				
 		splash();
 	}
 	

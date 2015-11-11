@@ -4,18 +4,16 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
 import com.ulticraft.Info;
-import com.ulticraft.Ulticraft;
 import com.ulticraft.uapi.UList;
 
 public class Commander implements CommandExecutor
 {
 	private UList<Node> nodes;
-	private Ulticraft pl;
 	
-	public Commander(Ulticraft pl)
+	public Commander()
 	{
-		this.pl = pl;
 		this.nodes = new UList<Node>();
 	}
 	

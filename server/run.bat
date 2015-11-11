@@ -9,7 +9,7 @@ goto run
 
 :build
 set startdir=%~dp0
-set bashdir="C:\Users\cyberpwn.DESKTOP-OP2F647\Documents\Development\bukkit\server\Git\bin\bash.exe"
+set bashdir="C:\Development\workspace\Ulticraft\server\Git\bin\bash.exe"
 %bashdir% --login -i -c "java -jar ""%startdir%\BuildTools.jar"""
 pause
 goto run
