@@ -1,0 +1,185 @@
+[03:35:38] [Server thread/INFO]: Starting minecraft server version 1.8.8
+[03:35:38] [Server thread/INFO]: Loading properties
+[03:35:38] [Server thread/INFO]: Default game type: SURVIVAL
+[03:35:38] [Server thread/INFO]: This server is running CraftBukkit version git-Spigot-5f38d38-18fbb24 (MC: 1.8.8) (Implementing API version 1.8.8-R0.1-SNAPSHOT)
+[03:35:38] [Server thread/INFO]: Debug logging is disabled
+[03:35:38] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[03:35:38] [Server thread/INFO]: Using 4 threads for Netty based IO
+[03:35:38] [Server thread/INFO]: Generating keypair
+[03:35:38] [Server thread/INFO]: Starting Minecraft server on *:25565
+[03:35:38] [Server thread/INFO]: Using default channel type
+[03:35:39] [Server thread/INFO]: Set PluginClassLoader as parallel capable
+[03:35:39] [Server thread/INFO]: [PermissionsEx] Loading PermissionsEx v1.23.3
+[03:35:39] [Server thread/INFO]: [PlugMan] Loading PlugMan v2.0.7
+[03:35:39] [Server thread/INFO]: [Essentials] Loading Essentials vTeamCity
+[03:35:39] [Server thread/INFO]: [Vault] Loading Vault v1.5.6-b49
+[03:35:39] [Server thread/INFO]: [ProtocolLib] Loading ProtocolLib v3.6.5-SNAPSHOT-b205
+[03:35:39] [Server thread/INFO]: [ResourcePackDownloader] Loading ResourcePackDownloader v4.0
+[03:35:39] [Server thread/INFO]: [Ulticraft] Loading Ulticraft v3.1.27.1337
+[03:35:39] [Server thread/INFO]: [Vault] Enabling Vault v1.5.6-b49
+[03:35:39] [Server thread/INFO]: [Vault] [Economy] Essentials Economy found: Waiting
+[03:35:39] [Server thread/INFO]: [Vault] [Permission] PermissionsEx found: Waiting
+[03:35:39] [Server thread/INFO]: [Vault] [Permission] SuperPermissions loaded as backup permission system.
+[03:35:39] [Server thread/INFO]: [Vault] [Chat] PermissionsEx found: Waiting
+[03:35:39] [Server thread/INFO]: [Vault] Enabled Version 1.5.6-b49
+[03:35:39] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v3.6.5-SNAPSHOT-b205
+[03:35:39] [Server thread/INFO]: [ProtocolLib] Started structure compiler thread.
+[03:35:39] [Server thread/INFO]: **** Beginning UUID conversion, this may take A LONG time ****
+[03:35:39] [Server thread/INFO]: Preparing level "fast"
+[03:35:39] [Server thread/INFO]: Preparing start region for level 0 (Seed: -3727291190410033928)
+[03:35:40] [Server thread/INFO]: [PermissionsEx] Enabling PermissionsEx v1.23.3
+[03:35:40] [Server thread/INFO]: [PermissionsEx] Initializing file backend
+[03:35:40] [Server thread/INFO]: [PermissionsEx] Permissions file successfully reloaded
+[03:35:40] [Server thread/INFO]: [Vault][Permission] PermissionsEx hooked.
+[03:35:40] [Server thread/INFO]: [Vault][Chat] PermissionsEx_Chat hooked.
+[03:35:40] [Server thread/INFO]: [PlugMan] Enabling PlugMan v2.0.7
+[03:35:40] [Server thread/INFO]: [Essentials] Enabling Essentials vTeamCity
+[03:35:40] [Server thread/INFO]: Bukkit version format changed. Version not checked.
+[03:35:40] [Server thread/INFO]: git-Spigot-5f38d38-18fbb24 (MC: 1.8.8)
+[03:35:40] [Server thread/INFO]: 1.8.8-R0.1-SNAPSHOT
+[03:35:40] [Server thread/INFO]: Using locale en_US
+[03:35:40] [Server thread/INFO]: Using locale en_US
+[03:35:41] [Server thread/INFO]: [Vault][Economy] Essentials Economy hooked.
+[03:35:41] [Server thread/INFO]: Essentials: Using PermissionsEx based permissions.
+[03:35:41] [Server thread/INFO]: [ResourcePackDownloader] Enabling ResourcePackDownloader v4.0
+[03:35:41] [Server thread/INFO]: [Ulticraft] Enabling Ulticraft v3.1.27.1337
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mEnabling Components[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Data Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Mana Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Gem Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Perk Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent UI Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Permission Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Command Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Sound Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Notification Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Achievement Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Security Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Auction Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Graphics Enabled[m
+[03:35:41] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Spell Enabled[m
+[03:35:41] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[03:35:41] [Server thread/INFO]: Done (1.477s)! For help, type "help" or "?"
+[03:35:41] [Server thread/INFO]: [PlugMan] Metrics started: http://mcstats.org/plugin/PlugMan
+[03:35:41] [Craft Scheduler Thread - 5/INFO]: [Vault] Checking for Updates ... 
+[03:35:41] [Craft Scheduler Thread - 5/INFO]: [Vault] No new version available
+[03:35:41] [Craft Scheduler Thread - 1/INFO]: [PlugMan] No update was found.
+[03:35:45] [User Authenticator #1/INFO]: UUID of player cyberpwn is 6a18d83f-7aba-48ad-bd96-fb5b01c2ada6
+[03:35:45] [Server thread/INFO]: [0;37;1mUlticraft: [0;36;1mLoaded Player 6a18d83f-7aba-48ad-bd96-fb5b01c2ada6[m
+[03:35:45] [Server thread/INFO]: cyberpwn[/127.0.0.1:63320] logged in with entity id 0 at ([fast]-1471.2305404226443, 4.0, 2446.7563707945546)
+[03:35:49] [Server thread/INFO]: cyberpwn issued server command: /gem
+[03:35:58] [Server thread/INFO]: cyberpwn issued server command: /gem get
+[03:35:58] [Server thread/ERROR]: null
+org.bukkit.command.CommandException: Unhandled exception executing command 'gem' in plugin Ulticraft v3.1.27.1337
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:46) ~[spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at org.bukkit.command.SimpleCommandMap.dispatch(SimpleCommandMap.java:141) ~[spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at org.bukkit.craftbukkit.v1_8_R3.CraftServer.dispatchCommand(CraftServer.java:641) ~[spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at net.minecraft.server.v1_8_R3.PlayerConnection.handleCommand(PlayerConnection.java:1162) [spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at net.minecraft.server.v1_8_R3.PlayerConnection.a(PlayerConnection.java:997) [spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at net.minecraft.server.v1_8_R3.PacketPlayInChat.a(PacketPlayInChat.java:45) [spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at net.minecraft.server.v1_8_R3.PacketPlayInChat.a(PacketPlayInChat.java:1) [spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at net.minecraft.server.v1_8_R3.PlayerConnectionUtils$1.run(SourceFile:13) [spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source) [?:1.8.0_65]
+	at java.util.concurrent.FutureTask.run(Unknown Source) [?:1.8.0_65]
+	at net.minecraft.server.v1_8_R3.SystemUtils.a(SourceFile:44) [spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at net.minecraft.server.v1_8_R3.MinecraftServer.B(MinecraftServer.java:715) [spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at net.minecraft.server.v1_8_R3.DedicatedServer.B(DedicatedServer.java:374) [spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at net.minecraft.server.v1_8_R3.MinecraftServer.A(MinecraftServer.java:654) [spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at net.minecraft.server.v1_8_R3.MinecraftServer.run(MinecraftServer.java:557) [spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_65]
+Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(Unknown Source) ~[?:1.8.0_65]
+	at java.util.ArrayList.get(Unknown Source) ~[?:1.8.0_65]
+	at com.ulticraft.command.Commander.resolveNode(Commander.java:36) ~[?:?]
+	at com.ulticraft.command.Commander.onCommand(Commander.java:115) ~[?:?]
+	at org.bukkit.command.PluginCommand.execute(PluginCommand.java:44) ~[spigot-1.8.8.jar:git-Spigot-5f38d38-18fbb24]
+	... 15 more
+[03:37:20] [Server thread/INFO]: CONSOLE: [0;31;1mPlease note that this command is not supported and may cause issues when using some plugins.[m
+[03:37:20] [Server thread/INFO]: CONSOLE: [0;31;1mIf you encounter any issues please use the /stop command to restart your server.[m
+[03:37:20] [Server thread/INFO]: Debug logging is disabled
+[03:37:20] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[03:37:20] [Server thread/INFO]: Using 4 threads for Netty based IO
+[03:37:20] [Server thread/INFO]: [Ulticraft] Disabling Ulticraft v3.1.27.1337
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mDisabling Components[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Spell Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Graphics Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Auction Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Security Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Achievement Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Notification Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Sound Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Command Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Permission Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent UI Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Perk Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Gem Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Mana Disabled[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;36;1mFlushed Player 6a18d83f-7aba-48ad-bd96-fb5b01c2ada6[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;36;1mSaved Player 6a18d83f-7aba-48ad-bd96-fb5b01c2ada6[m
+[03:37:20] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Data Disabled[m
+[03:37:20] [Server thread/INFO]: [ResourcePackDownloader] Disabling ResourcePackDownloader v4.0
+[03:37:20] [Server thread/INFO]: [ProtocolLib] Disabling ProtocolLib v3.6.5-SNAPSHOT-b205
+[03:37:20] [Server thread/INFO]: [Vault] Disabling Vault v1.5.6-b49
+[03:37:20] [Server thread/INFO]: [Essentials] Disabling Essentials vTeamCity
+[03:37:20] [Server thread/INFO]: [PlugMan] Disabling PlugMan v2.0.7
+[03:37:20] [Server thread/INFO]: [PermissionsEx] Disabling PermissionsEx v1.23.3
+[03:37:20] [Server thread/INFO]: [PermissionsEx] Loading PermissionsEx v1.23.3
+[03:37:20] [Server thread/INFO]: [PlugMan] Loading PlugMan v2.0.7
+[03:37:20] [Server thread/INFO]: [Essentials] Loading Essentials vTeamCity
+[03:37:20] [Server thread/INFO]: [Vault] Loading Vault v1.5.6-b49
+[03:37:20] [Server thread/INFO]: [ProtocolLib] Loading ProtocolLib v3.6.5-SNAPSHOT-b205
+[03:37:20] [Server thread/INFO]: [ResourcePackDownloader] Loading ResourcePackDownloader v4.0
+[03:37:20] [Server thread/INFO]: [Ulticraft] Loading Ulticraft v3.1.27.1337
+[03:37:20] [Server thread/INFO]: [Vault] Enabling Vault v1.5.6-b49
+[03:37:20] [Server thread/INFO]: [Vault] [Economy] Essentials Economy found: Waiting
+[03:37:20] [Server thread/INFO]: [Vault] [Permission] PermissionsEx found: Waiting
+[03:37:20] [Server thread/INFO]: [Vault] [Permission] SuperPermissions loaded as backup permission system.
+[03:37:20] [Server thread/INFO]: [Vault] [Chat] PermissionsEx found: Waiting
+[03:37:20] [Server thread/INFO]: [Vault] Enabled Version 1.5.6-b49
+[03:37:20] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v3.6.5-SNAPSHOT-b205
+[03:37:20] [Server thread/INFO]: [ProtocolLib] Started structure compiler thread.
+[03:37:20] [Server thread/INFO]: [PermissionsEx] Enabling PermissionsEx v1.23.3
+[03:37:20] [Server thread/INFO]: [PermissionsEx] Initializing file backend
+[03:37:20] [Server thread/INFO]: [PermissionsEx] Permissions file successfully reloaded
+[03:37:20] [Server thread/INFO]: [Vault][Permission] PermissionsEx hooked.
+[03:37:20] [Server thread/INFO]: [Vault][Chat] PermissionsEx_Chat hooked.
+[03:37:20] [Server thread/INFO]: [PlugMan] Enabling PlugMan v2.0.7
+[03:37:20] [Server thread/INFO]: [Essentials] Enabling Essentials vTeamCity
+[03:37:20] [Server thread/INFO]: Bukkit version format changed. Version not checked.
+[03:37:20] [Server thread/INFO]: git-Spigot-5f38d38-18fbb24 (MC: 1.8.8)
+[03:37:20] [Server thread/INFO]: 1.8.8-R0.1-SNAPSHOT
+[03:37:20] [Server thread/INFO]: Using locale en_US
+[03:37:20] [Server thread/INFO]: Using locale en_US
+[03:37:20] [Server thread/INFO]: [Vault][Economy] Essentials Economy hooked.
+[03:37:20] [Server thread/INFO]: Essentials: Using PermissionsEx based permissions.
+[03:37:20] [Server thread/INFO]: [ResourcePackDownloader] Enabling ResourcePackDownloader v4.0
+[03:37:20] [Server thread/INFO]: [Ulticraft] Enabling Ulticraft v3.1.27.1337
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mEnabling Components[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;36;1mLoaded Player 6a18d83f-7aba-48ad-bd96-fb5b01c2ada6[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Data Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Gem Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Mana Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Sound Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Notification Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Perk Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Permission Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Achievement Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Graphics Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent UI Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Auction Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Command Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Security Enabled[m
+[03:37:21] [Server thread/INFO]: [0;37;1mUlticraft: [0;35;1mComponent Spell Enabled[m
+[03:37:21] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[03:37:21] [Server thread/INFO]: CONSOLE: [0;32;1mReload complete.[m
+[03:37:21] [Server thread/INFO]: [PlugMan] Metrics started: http://mcstats.org/plugin/PlugMan
+[03:37:21] [Craft Scheduler Thread - 12/INFO]: [Vault] Checking for Updates ... 
+[03:37:21] [Craft Scheduler Thread - 12/INFO]: [Vault] No new version available
+[03:37:21] [Craft Scheduler Thread - 8/INFO]: [PlugMan] No update was found.
+[03:37:27] [Server thread/INFO]: Player cyberpwn is too far away to hear the sound
+[03:37:38] [Server thread/INFO]: cyberpwn issued server command: /ci
+[03:37:38] [Server thread/INFO]: §ccyberpwn §4was denied access to command.
+[03:37:41] [Server thread/INFO]: cyberpwn issued server command: /clear
+[03:37:41] [Server thread/INFO]: §ccyberpwn §4was denied access to command.
+[03:37:43] [Server thread/INFO]: cyberpwn issued server command: /gem
+[03:37:45] [Server thread/INFO]: cyberpwn issued server command: /gem get

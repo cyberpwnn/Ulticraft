@@ -1,0 +1,15 @@
+groups:
+  default:
+    options:
+      default: true
+    permissions:
+    - modifyworld.*
+schema-version: 1
+users:
+  6a18d83f-7aba-48ad-bd96-fb5b01c2ada6:
+    permissions:
+    - ulticraft.fly
+    - essentials.fly.safelogin
+    - essentials.fly
+    options:
+      name: cyberpwn

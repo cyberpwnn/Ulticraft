@@ -29,7 +29,7 @@
 						<version>2.3.1</version>
 						<configuration>
 							<finalName>Ulticraft</finalName>
-							<outputDirectory>C:\Users\cyberpwn.DESKTOP-OP2F647\Documents\Development\bukkit\server\plugins\</outputDirectory>
+							<outputDirectory>C:\Development\Ulticraft\server\plugins\</outputDirectory>
 						</configuration>
 					</plugin>
 				</plugins>
