@@ -7,7 +7,7 @@ import com.ulticraft.uapi.UList;
 public class RunnableNode implements Runnable
 {
 	private CommandSender sender;
-	private UList<NodeParam> data;
+	private UList<NodeParamData> data;
 	
 	public CommandSender getSender()
 	{
@@ -19,12 +19,12 @@ public class RunnableNode implements Runnable
 		this.sender = sender;
 	}
 	
-	public UList<NodeParam> getData()
+	public UList<NodeParamData> getData()
 	{
 		return data;
 	}
 
-	public void setData(UList<NodeParam> data)
+	public void setData(UList<NodeParamData> data)
 	{
 		this.data = data;
 	}
@@ -39,7 +39,17 @@ public class RunnableNode implements Runnable
 		return (Player) sender;
 	}
 	
-	public void run(CommandSender sender, UList<NodeParam> data)
+	public Player getDataPlayer()
+	{
+		if(data instanceof Player)
+		{
+			return (Player) data;
+		}
+		
+		return null;
+	}
+	
+	public void run(CommandSender sender, UList<NodeParamData> data)
 	{
 		setSender(sender);
 		setData(data);

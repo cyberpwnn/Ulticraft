@@ -15,6 +15,11 @@ public class NodeParam
 		this.flags = new UList<NodeParamFlag>();
 	}
 	
+	public NodeParamData toParamData(Object data)
+	{
+		return new NodeParamData(name, type, data);
+	}
+	
 	public void addFlag(NodeParamFlag flag)
 	{
 		flags.add(flag);
@@ -48,5 +53,10 @@ public class NodeParam
 	public void setType(NodeType type)
 	{
 		this.type = type;
+	}
+	
+	public String toString()
+	{
+		return type.toString() + ":" + name;
 	}
 }
