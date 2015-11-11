@@ -72,6 +72,22 @@ public class UList<T> extends ArrayList<T>
 		return null;
 	}
 	
+	public void trimBeginning(int ammountToTrim)
+	{
+		for(int i = 0; i < ammountToTrim; i++)
+		{
+			remove(0);
+		}
+	}
+	
+	public void trimEnd(int ammountToTrim)
+	{
+		for(int i = 0; i < ammountToTrim; i++)
+		{
+			remove(size() - 1);
+		}
+	}
+	
 	public boolean hasIndex(int i)
 	{
 		return i > size() - 1;
