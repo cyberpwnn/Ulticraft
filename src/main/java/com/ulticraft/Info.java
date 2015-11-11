@@ -1,5 +1,6 @@
 package com.ulticraft;
 
+import org.bukkit.Material;
 import com.ulticraft.composite.Perk;
 import com.ulticraft.uapi.USound;
 import net.md_5.bungee.api.ChatColor;
@@ -58,7 +59,7 @@ public class Info
 	
 	public static final int MANA_BAR_SPLIT = 20;
 	
-	public static final Perk PERK_FLY = new Perk("Fly", new String[]{"Fly anywhere with /fly!"}, new String[]{"essentials.fly", "essentials.fly.safelogin"}, 400);
+	public static final Perk PERK_FLY = new Perk("Fly", new String[]{"Fly anywhere with /fly!"}, new String[]{"essentials.fly", "essentials.fly.safelogin"}, 400, Material.FEATHER);
 
 	public static final Perk[] PERKS = new Perk[]{PERK_FLY};
 }
