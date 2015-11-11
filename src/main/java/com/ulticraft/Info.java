@@ -38,11 +38,14 @@ public class Info
 	public static final char DINGBAT_CHECK = '\u2B22';
 	public static final char DINGBAT_NOTCHECK = '\u2B22';
 	public static final char DINGBAT_BACK = '\u2B22';
-	
+		
 	public static final String MSG_NO_PERMISSION = ChatColor.RED + "Insufficient Permissions";
+	public static final String MSG_PLAYER_GEM_HAS = ChatColor.LIGHT_PURPLE + "%s" + ChatColor.DARK_GRAY + " has " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_INVALID_INPUT = ChatColor.RED + "Invalid input '%s' for type %s";
+	public static final String MSG_INVALID_PARAMS = ChatColor.RED + "Invalid params: %s for %s";
 	public static final String MSG_PLAYER_ONLY = ChatColor.RED + "Error: Player Only Command";
 	public static final String MSG_CONSOLE_ONLY = ChatColor.RED + "Error: Console Only Command";
+	public static final String MSG_UNKNOWN_SUB_COMMAND = ChatColor.RED + "Unknown Sub Command '%s'";
 	
 	public static final String MSG_GEMS_HAVE = ChatColor.DARK_GRAY + "You have " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_GEMS_SPENT = ChatColor.DARK_GRAY + "Spent " + ChatColor.LIGHT_PURPLE + "%s Gems";
