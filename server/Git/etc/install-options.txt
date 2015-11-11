@@ -1,5 +1,0 @@
-Path Option: BashOnly
-SSH Option: OpenSSH
-CRLF Option: CRLFAlways
-Bash Terminal Option: MinTTY
-Performance Tweaks FSCache: Disabled
