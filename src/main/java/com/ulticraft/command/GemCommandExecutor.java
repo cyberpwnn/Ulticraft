@@ -98,6 +98,11 @@ public class GemCommandExecutor implements CommandExecutor
 							pl.msg(sender, String.format(Info.MSG_CANT_FIND_PLAYER, args[1]));
 						}
 					}
+					
+					else
+					{
+						pl.msg(sender, Info.CMD_HELP_ADMIN_GEM);
+					}
 				}
 				
 				else if(args[0].equalsIgnoreCase("take"))
@@ -145,6 +150,11 @@ public class GemCommandExecutor implements CommandExecutor
 						{
 							pl.msg(sender, String.format(Info.MSG_CANT_FIND_PLAYER, args[1]));
 						}
+					}
+					
+					else
+					{
+						pl.msg(sender, Info.CMD_HELP_ADMIN_GEM);
 					}
 				}
 				
