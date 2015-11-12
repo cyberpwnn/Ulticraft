@@ -54,10 +54,18 @@ public class Info
 	public static final String[] CMD_HELP_ADMIN_GEM = new String[]{TAG_GEMS + ChatColor.LIGHT_PURPLE + "/gem " + ChatColor.DARK_GRAY + "- Get current gems", Info.TAG_GEMS + ChatColor.LIGHT_PURPLE + "/gem get " + ChatColor.AQUA + "<player> " + ChatColor.DARK_GRAY + "- Get a player's gems", TAG_GEMS + ChatColor.LIGHT_PURPLE + "/gem give " + ChatColor.AQUA + "[player] [gems] " + ChatColor.DARK_GRAY + "- Give a player gems", TAG_GEMS + ChatColor.LIGHT_PURPLE + "/gem take " + ChatColor.AQUA + "[player] [gems] " + ChatColor.DARK_GRAY + "- Take player gems"};
 	
 	public static final String MSG_NO_PERMISSION = TAG_ULTICRAFT + ChatColor.RED + "Insufficient Permissions";
+	public static final String MSG_CANT_FIND_PLAYER = TAG_ULTICRAFT + ChatColor.RED + "Cannot find player '%s'";
+	public static final String MSG_NOT_POSITIVE = TAG_ULTICRAFT + ChatColor.RED + "%s is clearly not positive.";
+	public static final String MSG_NOT_NEGATIVE = TAG_ULTICRAFT + ChatColor.RED + "%s is clearly not negative.";
+	public static final String MSG_NOT_ZERO = TAG_ULTICRAFT + ChatColor.RED + "%s is zero. Fix that.";
+	public static final String MSG_NOT_NUMBER = TAG_ULTICRAFT + ChatColor.RED + "'%s' is not a number. It's Trash.";
 	public static final String MSG_PLAYER_GEM_HAS = TAG_GEMS + ChatColor.LIGHT_PURPLE + "%s" + ChatColor.DARK_GRAY + " has " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_PLAYER_ONLY = TAG_ULTICRAFT + ChatColor.RED + "Player Only Command";
 	public static final String MSG_CONSOLE_ONLY = TAG_ULTICRAFT + ChatColor.RED + "Console Only Command";
 	public static final String MSG_UNKNOWN_SUB_COMMAND = TAG_ULTICRAFT + ChatColor.RED + "Unknown Sub Command '%s'";
+	public static final String MSG_GEMS_GAVE = TAG_GEMS + ChatColor.DARK_GRAY + "Gave " + ChatColor.LIGHT_PURPLE + "%s Gems" + ChatColor.DARK_GRAY + " to " + ChatColor.LIGHT_PURPLE + "%s";
+	public static final String MSG_GEMS_TOOK = TAG_GEMS + ChatColor.DARK_GRAY + "Took " + ChatColor.LIGHT_PURPLE + "%s Gems" + ChatColor.DARK_GRAY + " from " + ChatColor.LIGHT_PURPLE + "%s";
+	public static final String MSG_GEMS_NOT_ENOUGH = TAG_GEMS + ChatColor.DARK_GRAY + "Nope. " + ChatColor.LIGHT_PURPLE + "%s" + ChatColor.DARK_GRAY + " only has " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	
 	public static final String MSG_GEMS_HAVE = TAG_GEMS + ChatColor.DARK_GRAY + "You have " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_GEMS_SPENT = ChatColor.DARK_GRAY + "Spent " + ChatColor.LIGHT_PURPLE + "%s Gems";
