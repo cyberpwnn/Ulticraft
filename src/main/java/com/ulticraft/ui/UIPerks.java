@@ -1,5 +1,6 @@
 package com.ulticraft.ui;
 
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import com.ulticraft.Info;
 import com.ulticraft.Ulticraft;
@@ -46,6 +47,15 @@ public class UIPerks extends UI
 				m++;
 			}
 		}
+		
+		pane.new Element(Info.UI_ACTION_BACK, Material.CHAINMAIL_CHESTPLATE, 4, 4).setQuickRunnable(new Runnable()
+		{
+			public void run()
+			{
+				gui.close();
+				new UIMain(pl, viewer).show();
+			}
+		});
 		
 		pane.show();
 	}
