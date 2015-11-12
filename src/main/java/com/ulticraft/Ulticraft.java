@@ -1,6 +1,7 @@
 package com.ulticraft;
 
 import java.util.Collection;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
@@ -104,6 +105,19 @@ public class Ulticraft extends JavaPlugin
 		for(String i : Info.AUTHORS)
 		{
 			notificationComponent.broadcast(new Notification().setSubSubTitle(ChatColor.LIGHT_PURPLE + i).setPriority(NotificationPriority.LOW));
+		}
+	}
+	
+	public void msg(CommandSender sender, String msg)
+	{
+		sender.sendMessage(msg);
+	}
+	
+	public void msg(CommandSender sender, String[] msgs)
+	{
+		for(String i : msgs)
+		{
+			msg(sender, i);
 		}
 	}
 	
