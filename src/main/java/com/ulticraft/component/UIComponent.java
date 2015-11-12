@@ -8,12 +8,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import com.ulticraft.Info;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.uapi.Component;
 import com.ulticraft.uapi.Depend;
-import com.ulticraft.uapi.Gui;
-import com.ulticraft.uapi.Gui.Pane;
 import com.ulticraft.ui.UIPerks;
 import net.md_5.bungee.api.ChatColor;
 
