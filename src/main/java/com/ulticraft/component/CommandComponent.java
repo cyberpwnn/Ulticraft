@@ -1,6 +1,8 @@
 package com.ulticraft.component;
 
+import com.ulticraft.Info;
 import com.ulticraft.Ulticraft;
+import com.ulticraft.command.GemCommandExecutor;
 import com.ulticraft.uapi.Component;
 import com.ulticraft.uapi.Depend;
 
@@ -14,6 +16,8 @@ public class CommandComponent extends Component
 	
 	public void enable()
 	{
+		pl.getCommand(Info.CMD_GEM).setExecutor(new GemCommandExecutor(pl));
+		
 		super.enable();
 	}
 	
