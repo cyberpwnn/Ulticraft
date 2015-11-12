@@ -14,6 +14,7 @@ import com.ulticraft.uapi.Component;
 import com.ulticraft.uapi.Depend;
 import com.ulticraft.uapi.Gui;
 import com.ulticraft.uapi.Gui.Pane;
+import com.ulticraft.ui.UIPerks;
 import net.md_5.bungee.api.ChatColor;
 
 @Depend(PerkComponent.class)
@@ -101,12 +102,8 @@ public class UIComponent extends Component implements Listener
 	
 	public void openGui(final Player p)
 	{
-		final Gui gui = new Gui(p, pl);
+		UIPerks ui = new UIPerks(pl, "Perks", p, true);
 		
-		Pane home = gui.new Pane("Ulticraft");
-		home.setDefault();
-		Info.SOUND_GUI_CONFIRM.play(p);
-		
-		gui.show();
+		ui.show();
 	}
 }
