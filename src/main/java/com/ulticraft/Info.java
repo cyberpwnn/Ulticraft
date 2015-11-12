@@ -22,9 +22,7 @@ public class Info
 	public static final String STAT_MAGICFLAMES = "Magic Flames";
 	public static final String STAT_MAGICRUSHES = "Magic Rushes";
 	
-	public static final String PERM_GEM_GIVE = "ulticraft.gems.give";
-	public static final String PERM_GEM_TAKE = "ulticraft.gems.take";
-	public static final String PERM_GEM_GET = "ulticraft.gems.get";
+	public static final String PERM_GEM_GOD = "ulticraft.gems.god";
 	
 	public static final String ERR_NO_PERK_HAS_PERMS = "ERROR: #200";
 	public static final String ERR_NO_PERMS_HAS_PERK = "ERROR: #201";
@@ -38,16 +36,30 @@ public class Info
 	public static final char DINGBAT_CHECK = '\u2B22';
 	public static final char DINGBAT_NOTCHECK = '\u2B22';
 	public static final char DINGBAT_BACK = '\u2B22';
-		
-	public static final String MSG_NO_PERMISSION = ChatColor.RED + "Insufficient Permissions";
-	public static final String MSG_PLAYER_GEM_HAS = ChatColor.LIGHT_PURPLE + "%s" + ChatColor.DARK_GRAY + " has " + ChatColor.LIGHT_PURPLE + "%s Gems";
-	public static final String MSG_INVALID_INPUT = ChatColor.RED + "Invalid input '%s' for type %s";
-	public static final String MSG_INVALID_PARAMS = ChatColor.RED + "Invalid params: %s for %s";
-	public static final String MSG_PLAYER_ONLY = ChatColor.RED + "Error: Player Only Command";
-	public static final String MSG_CONSOLE_ONLY = ChatColor.RED + "Error: Console Only Command";
-	public static final String MSG_UNKNOWN_SUB_COMMAND = ChatColor.RED + "Unknown Sub Command '%s'";
 	
-	public static final String MSG_GEMS_HAVE = ChatColor.DARK_GRAY + "You have " + ChatColor.LIGHT_PURPLE + "%s Gems";
+	public static final String TAG = ChatColor.LIGHT_PURPLE + "[" + ChatColor.DARK_GRAY + "%s" + ChatColor.LIGHT_PURPLE + "]" + ChatColor.AQUA + ": ";
+	public static final String TAG_GEMS = String.format(TAG, "Gems");
+	public static final String TAG_ULTICRAFT = String.format(TAG, "Ulticraft");
+	public static final String TAG_MANA = String.format(TAG, "Mana");
+	public static final String TAG_PERKS = String.format(TAG, "Perks");
+	public static final String TAG_SPELLS = String.format(TAG, "Spells");
+	
+	public static final String CMD_GEM = "gem";
+	public static final String CMD_ULTICRAFT = "ulticraft";
+	public static final String CMD_MANA = "mana";
+	public static final String CMD_PERK = "perk";
+	public static final String CMD_SPELL = "spell";
+	
+	public static final String[] CMD_HELP_GEM = new String[]{TAG_GEMS + ChatColor.LIGHT_PURPLE + "/gem " + ChatColor.DARK_GRAY + "- Get current gems"};
+	public static final String[] CMD_HELP_ADMIN_GEM = new String[]{TAG_GEMS + ChatColor.LIGHT_PURPLE + "/gem " + ChatColor.DARK_GRAY + "- Get current gems", Info.TAG_GEMS + ChatColor.LIGHT_PURPLE + "/gem get " + ChatColor.AQUA + "<player> " + ChatColor.DARK_GRAY + "- Get a player's gems", TAG_GEMS + ChatColor.LIGHT_PURPLE + "/gem give " + ChatColor.AQUA + "[player] [gems] " + ChatColor.DARK_GRAY + "- Give a player gems", TAG_GEMS + ChatColor.LIGHT_PURPLE + "/gem take " + ChatColor.AQUA + "[player] [gems] " + ChatColor.DARK_GRAY + "- Take player gems"};
+	
+	public static final String MSG_NO_PERMISSION = TAG_ULTICRAFT + ChatColor.RED + "Insufficient Permissions";
+	public static final String MSG_PLAYER_GEM_HAS = TAG_GEMS + ChatColor.LIGHT_PURPLE + "%s" + ChatColor.DARK_GRAY + " has " + ChatColor.LIGHT_PURPLE + "%s Gems";
+	public static final String MSG_PLAYER_ONLY = TAG_ULTICRAFT + ChatColor.RED + "Player Only Command";
+	public static final String MSG_CONSOLE_ONLY = TAG_ULTICRAFT + ChatColor.RED + "Console Only Command";
+	public static final String MSG_UNKNOWN_SUB_COMMAND = TAG_ULTICRAFT + ChatColor.RED + "Unknown Sub Command '%s'";
+	
+	public static final String MSG_GEMS_HAVE = TAG_GEMS + ChatColor.DARK_GRAY + "You have " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_GEMS_SPENT = ChatColor.DARK_GRAY + "Spent " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_GEMS_EARNED = ChatColor.DARK_GRAY + "Earned " + ChatColor.LIGHT_PURPLE + "%s Gems";
 	public static final String MSG_PERK_UNLOCK = ChatColor.DARK_GRAY + "Unlocked " + ChatColor.LIGHT_PURPLE + "%s";
@@ -68,6 +80,6 @@ public class Info
 	public static final int MANA_BAR_SPLIT = 20;
 	
 	public static final Perk PERK_FLY = new Perk("Fly", new String[]{"Fly anywhere with /fly!"}, new String[]{"essentials.fly", "essentials.fly.safelogin"}, 400, Material.FEATHER);
-
+	
 	public static final Perk[] PERKS = new Perk[]{PERK_FLY};
 }
