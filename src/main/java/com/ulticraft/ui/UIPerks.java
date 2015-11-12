@@ -1,6 +1,7 @@
 package com.ulticraft.ui;
 
 import org.bukkit.entity.Player;
+import com.ulticraft.Info;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.composite.Perk;
 import com.ulticraft.uapi.Gui;
@@ -11,9 +12,9 @@ public class UIPerks extends UI
 {
 	private boolean buy;
 	
-	public UIPerks(Ulticraft pl, String title, Player viewer, boolean buy)
+	public UIPerks(Ulticraft pl, Player viewer, boolean buy)
 	{
-		super(pl, title, viewer);
+		super(pl, buy ? Info.UI_TITLE_PERKS_GET : Info.UI_TITLE_PERKS_MY, viewer);
 		this.buy = buy;
 	}
 	

@@ -100,7 +100,7 @@ public class UIComponent extends Component implements Listener
 	
 	public void openGui(final Player p)
 	{
-		UIPerks ui = new UIPerks(pl, "Perks", p, true);
+		UIPerks ui = new UIPerks(pl, p, true);
 		
 		ui.show();
 	}

@@ -22,6 +22,10 @@ public class Info
 	public static final String STAT_MAGICFLAMES = "Magic Flames";
 	public static final String STAT_MAGICRUSHES = "Magic Rushes";
 	
+	public static final String UI_TITLE_ULTICRAFT = ChatColor.DARK_GRAY + NAME;
+	public static final String UI_TITLE_PERKS_GET = ChatColor.DARK_GRAY + "Get Perks";
+	public static final String UI_TITLE_PERKS_MY = ChatColor.DARK_GRAY + "My Perks";
+	
 	public static final String PERM_GEM_GOD = "ulticraft.gems.god";
 	
 	public static final String ERR_NO_PERK_HAS_PERMS = "ERROR: #200";
