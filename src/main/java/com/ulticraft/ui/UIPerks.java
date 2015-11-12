@@ -68,11 +68,8 @@ public class UIPerks extends UI
 					@Override
 					public void run()
 					{
-						if(pl.getGemComponent().has(viewer, i.getCost()))
-						{
-							pl.getPerkComponent().unlock(viewer, i);
-							viewer.closeInventory();
-						}
+						pl.getPerkComponent().unlock(viewer, i);
+						viewer.closeInventory();
 					}
 				});
 			}

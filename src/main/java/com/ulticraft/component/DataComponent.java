@@ -117,6 +117,41 @@ public class DataComponent extends Component implements Listener
 		return true;
 	}
 	
+	public void refresh(Player player)
+	{
+		if(!cache.containsKey(player))
+		{
+			pl.f("Failed to re-flush Player " + player.getUniqueId().toString());
+			return;
+		}
+		
+		DataManager dm = new DataManager(pl, toFileName(player));
+		PlayerData pd = get(player);
+		
+		if(pd != null)
+		{
+			dm.writeYAML(pd);
+			
+			DataManager dmx = new DataManager(pl, toFileName(player));
+			PlayerData pdx = (PlayerData) dmx.readYAML(PlayerData.class);
+			
+			if(pdx != null)
+			{
+				cache.put(player, pdx);
+			}
+			
+			else
+			{
+				pl.f("Failed to refresh Player " + player.getUniqueId().toString());
+			}
+		}
+		
+		else
+		{
+			pl.f("Failed to re-flush player " + player.getUniqueId().toString());
+		}
+	}
+	
 	public PlayerData get(Player player)
 	{
 		if(!cache.containsKey(player))

@@ -92,6 +92,7 @@ public class UIComponent extends Component implements Listener
 				e.getPlayer().setSneaking(false);
 				e.getPlayer().setItemInHand(new ItemStack(Material.AIR));
 				e.getPlayer().getInventory().remove(Material.CHAINMAIL_HELMET);
+				pl.getDataComponent().refresh(e.getPlayer());
 				openGui(e.getPlayer());
 			}
 		}
