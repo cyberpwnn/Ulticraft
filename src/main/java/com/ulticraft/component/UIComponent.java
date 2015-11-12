@@ -11,7 +11,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.uapi.Component;
 import com.ulticraft.uapi.Depend;
-import com.ulticraft.ui.UIPerks;
+import com.ulticraft.ui.UIMain;
 import net.md_5.bungee.api.ChatColor;
 
 @Depend(PerkComponent.class)
@@ -100,8 +100,6 @@ public class UIComponent extends Component implements Listener
 	
 	public void openGui(final Player p)
 	{
-		UIPerks ui = new UIPerks(pl, p, true);
-		
-		ui.show();
+		new UIMain(pl, p).show();
 	}
 }
