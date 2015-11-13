@@ -48,7 +48,7 @@ public class UIPerks extends UI
 			}
 		}
 		
-		pane.new Element(Info.UI_ACTION_BACK, Material.CHAINMAIL_CHESTPLATE, 4, 4).setQuickRunnable(new Runnable()
+		pane.new Element(Info.UI_ACTION_BACK, Material.CHAINMAIL_CHESTPLATE, 4, 5).setQuickRunnable(new Runnable()
 		{
 			public void run()
 			{
