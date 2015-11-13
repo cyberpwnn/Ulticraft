@@ -6,6 +6,7 @@ import com.ulticraft.Info;
 import com.ulticraft.Ulticraft;
 import com.ulticraft.uapi.Gui;
 import com.ulticraft.uapi.Gui.Pane;
+import net.md_5.bungee.api.ChatColor;
 
 public class UIMain extends UI
 {	
@@ -19,7 +20,7 @@ public class UIMain extends UI
 		Gui gui = new Gui(viewer, pl);
 		Pane pane = gui.new Pane(title);
 		
-		pane.new Element(Info.UI_TITLE_PERKS_MY, Material.BARRIER, -1, 2).setQuickRunnable(new Runnable()
+		pane.new Element(ChatColor.LIGHT_PURPLE + ChatColor.stripColor(Info.UI_TITLE_PERKS_MY), Material.BARRIER, -1, 2).setQuickRunnable(new Runnable()
 		{
 			public void run()
 			{
@@ -28,7 +29,7 @@ public class UIMain extends UI
 			}
 		});
 		
-		pane.new Element(Info.UI_TITLE_PERKS_GET, Material.BARRIER, 1, 2).setQuickRunnable(new Runnable()
+		pane.new Element(ChatColor.LIGHT_PURPLE + ChatColor.stripColor(Info.UI_TITLE_PERKS_GET), Material.BARRIER, 1, 2).setQuickRunnable(new Runnable()
 		{
 			public void run()
 			{
