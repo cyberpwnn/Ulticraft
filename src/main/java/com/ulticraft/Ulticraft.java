@@ -17,6 +17,7 @@ import com.ulticraft.component.NotificationComponent;
 import com.ulticraft.component.PerkComponent;
 import com.ulticraft.component.PermissionComponent;
 import com.ulticraft.component.SecurityComponent;
+import com.ulticraft.component.ServerListComponent;
 import com.ulticraft.component.SoundComponent;
 import com.ulticraft.component.SpellComponent;
 import com.ulticraft.component.UIComponent;
@@ -43,6 +44,7 @@ public class Ulticraft extends JavaPlugin
 	private AuctionComponent auctionComponent;
 	private GraphicsComponent graphicsComponent;
 	private UIComponent uiComponent;
+	private ServerListComponent serverListComponent;
 	private CommandComponent commandComponent;
 	private Dispatcher dispatcher;
 	
@@ -62,6 +64,7 @@ public class Ulticraft extends JavaPlugin
 		manaComponent = new ManaComponent(this);
 		securityComponent = new SecurityComponent(this);
 		auctionComponent = new AuctionComponent(this);
+		serverListComponent = new ServerListComponent(this);
 		uiComponent = new UIComponent(this);
 		commandComponent = new CommandComponent(this);
 		
@@ -79,6 +82,7 @@ public class Ulticraft extends JavaPlugin
 		componentManager.register(manaComponent);
 		componentManager.register(uiComponent);
 		componentManager.register(commandComponent);
+		componentManager.register(serverListComponent);
 		
 		componentManager.enable();
 				
